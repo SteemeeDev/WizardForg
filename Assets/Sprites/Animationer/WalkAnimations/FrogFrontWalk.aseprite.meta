@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 235c70b4673d7084ba21aa14f1424f9a
+guid: 957b624bba53d434c806a386b0db09e9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 50
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 639086628177423559
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,78 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: SideUpWalk_Frame_0
+  - name: FrogFrontWalk_Frame_0
     originalName: 
-    pivot: {x: 0.47058824, y: 0}
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 195
+      width: 36
+      height: 56
+    spriteID: 676c20034967e664fab624cf0109936d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 195}
+  - name: FrogFrontWalk_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.036363635}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 4
+      width: 36
+      height: 55
+    spriteID: 9b84614ecc667c347a70c140050ef2c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 4}
+  - name: FrogFrontWalk_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 67
+      width: 36
+      height: 55
+    spriteID: 8cecb20bde1ebdd438fb1fee21a1d39f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 67}
+  - name: FrogFrontWalk_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.69945353}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 34
-      height: 55
-    spriteID: 261966f42a233004487b4309cee143dd
+      width: 36
+      height: 183
+    spriteID: bfe848e4bb8db0e47a6138347ba4b1e7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,110 +199,98 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: SideUpWalk_Frame_1
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 46
-      y: 4
-      width: 34
-      height: 55
-    spriteID: da71a33e5db340a40b2ea180d35d90bf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 46, y: 4}
-  - name: SideUpWalk_Frame_2
-    originalName: 
-    pivot: {x: 0.4857143, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 88
-      y: 4
-      width: 35
-      height: 53
-    spriteID: 5676d1b3ea4900b4e86d4167e3be939a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 88, y: 4}
-  - name: SideUpWalk_Frame_3
-    originalName: 
-    pivot: {x: 0.47058824, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 67
-      width: 34
-      height: 53
-    spriteID: 547482172ca8f324e90ec3a895c0ea9d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 67}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -775348065
-    name: SideUpWalk
+    guid: -386705866
+    name: FrogFrontWalk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: SideUpWalk_Frame_0
+    - name: FrogFrontWalk_Frame_0
       frameIndex: 0
       cellRect:
-        x: 16
-        y: 0
-        width: 34
-        height: 55
-      spriteId: 261966f42a233004487b4309cee143dd
-    - name: SideUpWalk_Frame_1
+        x: 14
+        y: 2
+        width: 36
+        height: 56
+      spriteId: 676c20034967e664fab624cf0109936d
+    - name: FrogFrontWalk_Frame_1
       frameIndex: 1
       cellRect:
-        x: 16
-        y: 0
-        width: 34
+        x: 14
+        y: 2
+        width: 36
         height: 55
-      spriteId: da71a33e5db340a40b2ea180d35d90bf
-    - name: SideUpWalk_Frame_2
+      spriteId: 9b84614ecc667c347a70c140050ef2c0
+    - name: FrogFrontWalk_Frame_2
       frameIndex: 2
       cellRect:
-        x: 15
+        x: 14
         y: 0
-        width: 35
-        height: 53
-      spriteId: 5676d1b3ea4900b4e86d4167e3be939a
-    - name: SideUpWalk_Frame_3
+        width: 36
+        height: 55
+      spriteId: 8cecb20bde1ebdd438fb1fee21a1d39f
+    - name: FrogFrontWalk_Frame_3
       frameIndex: 3
       cellRect:
-        x: 16
-        y: 0
-        width: 34
-        height: 53
-      spriteId: 547482172ca8f324e90ec3a895c0ea9d
+        x: 14
+        y: -128
+        width: 36
+        height: 183
+      spriteId: bfe848e4bb8db0e47a6138347ba4b1e7
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}

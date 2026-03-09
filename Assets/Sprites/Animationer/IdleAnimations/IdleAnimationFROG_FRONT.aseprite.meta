@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3bc31f2d7fd2d6547a0087395bd5d119
+guid: 388c987bb40c18a408044b5362f7a358
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 50
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639086511911342090
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,9 +119,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: FrogBackWalk_Frame_0
+  - name: IdleAnimationFROG_FRONT_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.05263158}
+    pivot: {x: 0.5, y: -0.017857144}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -129,8 +129,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 36
-      height: 57
-    spriteID: 152e4da023cf85a4b91918b3dca71f48
+      height: 56
+    spriteID: dbb5e88fc491dfe4099e968caeb435f4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,38 +139,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: FrogBackWalk_Frame_1
+  - name: IdleAnimationFROG_FRONT_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.03508772}
+    pivot: {x: 0.5, y: -0.017857144}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 69
-      width: 36
-      height: 57
-    spriteID: 890254ee968d3454ebaac621f6609dc9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 69}
-  - name: FrogBackWalk_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.035714287}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 134
+      x: 48
+      y: 4
       width: 36
       height: 56
-    spriteID: a7bbccdb104d6954ab9bf779cd7a738c
+    spriteID: ea00e4f90edca504a9a87f663f84ab04
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +158,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 134}
-  - name: FrogBackWalk_Frame_3
+    uvTransform: {x: 48, y: 4}
+  - name: IdleAnimationFROG_FRONT_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.055555556}
+    pivot: {x: 0.5, y: -0.018181818}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 198
+      y: 68
       width: 36
-      height: 54
-    spriteID: fda83a538bcbbc84fad452279d5aff92
+      height: 55
+    spriteID: 3394b60aa1f16784dbd26947c816d8df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,87 +178,71 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 198}
+    uvTransform: {x: 4, y: 68}
+  - name: IdleAnimationFROG_FRONT_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.018181818}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 68
+      width: 36
+      height: 55
+    spriteID: 4812769d1cde41d40bfeeb7f592d4528
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 68}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1271319378
-    name: FrogBackWalk
+    guid: 389391236
+    name: IdleAnimationFROG_FRONT
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: FrogBackWalk_Frame_0
+    - name: IdleAnimationFROG_FRONT_Frame_0
       frameIndex: 0
       cellRect:
         x: 14
-        y: 3
+        y: 1
         width: 36
-        height: 57
-      spriteId: 152e4da023cf85a4b91918b3dca71f48
-    - name: FrogBackWalk_Frame_1
+        height: 56
+      spriteId: dbb5e88fc491dfe4099e968caeb435f4
+    - name: IdleAnimationFROG_FRONT_Frame_1
       frameIndex: 1
       cellRect:
         x: 14
-        y: 2
+        y: 1
         width: 36
-        height: 57
-      spriteId: 890254ee968d3454ebaac621f6609dc9
-    - name: FrogBackWalk_Frame_2
+        height: 56
+      spriteId: ea00e4f90edca504a9a87f663f84ab04
+    - name: IdleAnimationFROG_FRONT_Frame_2
       frameIndex: 2
       cellRect:
         x: 14
-        y: 2
+        y: 1
         width: 36
-        height: 56
-      spriteId: a7bbccdb104d6954ab9bf779cd7a738c
-    - name: FrogBackWalk_Frame_3
+        height: 55
+      spriteId: 3394b60aa1f16784dbd26947c816d8df
+    - name: IdleAnimationFROG_FRONT_Frame_3
       frameIndex: 3
       cellRect:
         x: 14
-        y: 3
+        y: 1
         width: 36
-        height: 54
-      spriteId: fda83a538bcbbc84fad452279d5aff92
+        height: 55
+      spriteId: 4812769d1cde41d40bfeeb7f592d4528
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
