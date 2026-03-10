@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class HealthBar : MonoBehaviour
+{
+    [SerializeField] Image[] hearts;
+    [SerializeField] HealthManager healthManager;
+
+    private void Update()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].color = new Color(1f, 1f, 1f, 0.5f);
+        }
+
+        for (int i = 0; i < healthManager.health; i++)
+        {
+            hearts[i].color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+}

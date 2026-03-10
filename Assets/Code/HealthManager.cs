@@ -5,10 +5,15 @@ using UnityEngine.AI;
 
 public class HealthManager : MonoBehaviour
 {
-    public int health = 100;
+
+    public int health = 10;
     
     float smoothTime = 1f;
 
+    void UpdateHealthBar()
+    {
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
