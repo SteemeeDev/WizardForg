@@ -14,16 +14,4 @@ public class HealthManager : MonoBehaviour
     {
 
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        NavMeshAgent enemyRb = collision.gameObject.GetComponent<NavMeshAgent>();
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-           // Debug.Log("I got attacked");
-            health += -10;
-            
-        }
-    }
 }

@@ -9,6 +9,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField] Image[] hearts;
     [SerializeField] HealthManager healthManager;
 
+    private void Start()
+    {
+        StartCoroutine(shineHearts());
+    }
+
     private void Update()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -22,4 +27,17 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+
+    IEnumerator shineHearts()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2f, 4f));
+
+            for (int i = 0; i < hearts.Length; i++)
+            {
+                hearts[i].GetComponent<Animator>().SetTrigger("Shine");
+            }
+        }
+    }
 }
