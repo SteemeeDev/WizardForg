@@ -8,12 +8,15 @@ using Unity.VisualScripting;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField] float AttackRange = 2.5f;
+    [SerializeField] Rigidbody rb;
     int lockPos = 0;
     Transform playerPosition;
     private NavMeshAgent Agent;
+
+    bool playerIsTarget = true;
    
 
-
+    Vector3 targetPos = Vector3.zero;
    
 
     private void Start()
@@ -31,23 +34,34 @@ public class EnemyScript : MonoBehaviour
         
     }
 
-    IEnumerator EnemyPathFinding()
+    virtual public IEnumerator EnemyPathFinding()
     {
         while (true)
         {
             yield return new WaitForSeconds(0.3f);
-            Agent.SetDestination(playerPosition.position);
-
+            if (playerIsTarget) Agent.SetDestination(playerPosition.position);
         }
     }
 
-    /* This shit works
-    void OnCollisionEnter(Collision collision)
+    IEnumerator OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("I attack player");
+
+            Debug.Log("Hit player!");
+            HealthManager plrHealth = collision.gameObject.GetComponent<HealthManager>();
+
+            plrHealth.health -= 1;
+
+            playerIsTarget = false;
+
+            Agent.SetDestination((transform.position - playerPosition.position).normalized * 5);
+
+            yield return new WaitForSeconds(0.5f);
+
+            playerIsTarget = true;
         }
+
     }
-    */
+    
 }
