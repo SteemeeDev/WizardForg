@@ -50,7 +50,7 @@ public class WandController : MonoBehaviour
     void RotatePlayer()
     {
         float adjustedAtan = Mathf.Atan2(playerLook.x, playerLook.y) * (180f / Mathf.PI);
-        Debug.Log(adjustedAtan);
+       // Debug.Log(adjustedAtan);
 
 
         if (Mathf.Sign(adjustedAtan) == 1f)
