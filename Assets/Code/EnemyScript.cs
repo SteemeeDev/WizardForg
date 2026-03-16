@@ -4,11 +4,14 @@ using UnityEngine;
 using Unity.AI;
 using UnityEngine.AI;
 using Unity.VisualScripting;
+using UnityEngine.LowLevel;
 
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField] float AttackRange = 2.5f;
     [SerializeField] Rigidbody rb;
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
     int lockPos = 0;
     Transform playerPosition;
     private NavMeshAgent Agent;
@@ -27,11 +30,29 @@ public class EnemyScript : MonoBehaviour
         StartCoroutine(EnemyPathFinding());
     }
 
+    Vector3 playerToEnemy;
     private void Update()
     {
         // locks the rotation so that the sprite doesn't fuck up :)
         transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);
-        
+
+        playerToEnemy = transform.position - playerPosition.position;
+        playerToEnemy = Quaternion.Euler(0, 45, 0) * playerToEnemy;
+
+        float adjustedAtan = Mathf.Atan2(playerToEnemy.x, playerToEnemy.z) * (180f / Mathf.PI);
+
+        animator.SetFloat("TurnDegrees", adjustedAtan);
+
+        if (Mathf.Sign(adjustedAtan) == 1f)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        Debug.Log(Mathf.Atan2(Agent.velocity.x, Agent.velocity.z) * (180f / Mathf.PI));
     }
 
     virtual public IEnumerator EnemyPathFinding()
