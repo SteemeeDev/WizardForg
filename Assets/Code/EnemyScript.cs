@@ -39,10 +39,10 @@ public class EnemyScript : MonoBehaviour
 
         enemyToPlayer = playerPosition.position - transform.position;
         enemyToPlayer = Quaternion.Euler(0, 135, 0) * enemyToPlayer;
-        Debug.DrawRay(transform.position, enemyToPlayer);
+        //Debug.DrawRay(transform.position, enemyToPlayer);
 
         float adjustedAtan = Mathf.Atan2(enemyToPlayer.x, enemyToPlayer.z) * (180f / Mathf.PI);
-        Debug.Log(adjustedAtan);
+       // Debug.Log(adjustedAtan);
 
         animator.SetFloat("TurnDegrees", adjustedAtan);
 

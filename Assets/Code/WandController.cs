@@ -10,6 +10,7 @@ public class WandController : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] Animator playerAnimator;
     [SerializeField] SpriteRenderer playerRenderer;
+    [SerializeField] Transform firePos;
 
     public float atan2;
 
@@ -41,7 +42,14 @@ public class WandController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            FireProjectile();
+            GameObject proj = Instantiate(projectile);
+            Projectile projManager = proj.GetComponent<Projectile>();
+
+            Vector3 fireDir = (transform.position - firePos.position);
+
+            StartCoroutine(
+                projManager.FireProjectile(this, firePos)
+            );
         }
 
         RotatePlayer();
@@ -64,13 +72,4 @@ public class WandController : MonoBehaviour
         playerAnimator.SetFloat("TurnDegrees", adjustedAtan);
     }
 
-    void FireProjectile()
-    {
-        GameObject proj = Instantiate(projectile);
-        proj.transform.position = transform.position;
-
-        Projectile projectileManager = proj.GetComponent<Projectile>();
-
-        projectileManager.travelDir = (transform.position - playerTransform.position)* 10; 
-    }
 }

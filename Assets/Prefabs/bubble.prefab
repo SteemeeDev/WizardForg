@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1364594441023174102}
   - component: {fileID: 5707257288259571732}
   - component: {fileID: 9079597294667774385}
-  - component: {fileID: 5881226274534228533}
-  m_Layer: 0
+  - component: {fileID: 5891670135828514924}
+  m_Layer: 10
   m_Name: bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 1.425, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 914373a9e1d4e3747b016e062e36fe42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f2029251766c8b48a9d6c74ec263121, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.05
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9079597294667774385
 Rigidbody:
@@ -130,12 +130,12 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!114 &5881226274534228533
+  m_CollisionDetection: 1
+--- !u!114 &5891670135828514924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,9 +144,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6811396048851116315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd47544856f09c4b9c935384deafa33, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a360ad22be2c474a8240f7d1273ee1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 9079597294667774385}
-  travelDir: {x: 0, y: 0, z: 0}
   lifetime: 5
+  timeAlive: 0
+  travelSpeed: 10
+  chargeUpTime: 2
+  charge: 0
