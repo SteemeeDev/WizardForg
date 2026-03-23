@@ -30,20 +30,23 @@ public class EnemyScript : MonoBehaviour
         StartCoroutine(EnemyPathFinding());
     }
 
-    Vector3 playerToEnemy;
+    Vector3 enemyToPlayer;
+
     private void Update()
     {
         // locks the rotation so that the sprite doesn't fuck up :)
         transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);
 
-        playerToEnemy = transform.position - playerPosition.position;
-        playerToEnemy = Quaternion.Euler(0, 45, 0) * playerToEnemy;
+        enemyToPlayer = playerPosition.position - transform.position;
+        enemyToPlayer = Quaternion.Euler(0, 135, 0) * enemyToPlayer;
+        Debug.DrawRay(transform.position, enemyToPlayer);
 
-        float adjustedAtan = Mathf.Atan2(playerToEnemy.x, playerToEnemy.z) * (180f / Mathf.PI);
+        float adjustedAtan = Mathf.Atan2(enemyToPlayer.x, enemyToPlayer.z) * (180f / Mathf.PI);
+        Debug.Log(adjustedAtan);
 
         animator.SetFloat("TurnDegrees", adjustedAtan);
 
-        if (Mathf.Sign(adjustedAtan) == 1f)
+        if (Mathf.Sign(adjustedAtan) == -1f)
         {
             spriteRenderer.flipX = true;
         }
@@ -52,7 +55,7 @@ public class EnemyScript : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        Debug.Log(Mathf.Atan2(Agent.velocity.x, Agent.velocity.z) * (180f / Mathf.PI));
+
     }
 
     virtual public IEnumerator EnemyPathFinding()

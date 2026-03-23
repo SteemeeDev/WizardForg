@@ -412,7 +412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &232720058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,6 +1762,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 52208746012240935, guid: 5eacfba7c3a1947408fb6265d6827353,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 52208746012240935, guid: 5eacfba7c3a1947408fb6265d6827353,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 52208746012240935, guid: 5eacfba7c3a1947408fb6265d6827353,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 271354644255123835, guid: 5eacfba7c3a1947408fb6265d6827353,
         type: 3}
       propertyPath: m_Name
