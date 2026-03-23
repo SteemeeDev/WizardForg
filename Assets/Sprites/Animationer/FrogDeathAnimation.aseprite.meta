@@ -1,0 +1,948 @@
+fileFormatVersion: 2
+guid: 53b28dd2f69045744a1fe7bd5fce639b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: FrogDeathAnimation_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 132
+      width: 36
+      height: 56
+    spriteID: 07f5223ee14eeee4f90b1512bba47331
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 132}
+  - name: FrogDeathAnimation_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 196
+      width: 36
+      height: 56
+    spriteID: d1dbc2f4b2404534aad5e2526ed9b3af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 196}
+  - name: FrogDeathAnimation_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 4
+      width: 36
+      height: 56
+    spriteID: ffdbb712c10fb294f99ec340b9d971a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 4}
+  - name: FrogDeathAnimation_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 68
+      width: 36
+      height: 56
+    spriteID: fbd5850c78906de4ea6fda48b8f32028
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 68}
+  - name: FrogDeathAnimation_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 38
+      height: 56
+    spriteID: 16df2c176ca1c0b4694b632628e2ce54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: FrogDeathAnimation_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 38
+      height: 56
+    spriteID: 7f9d2fba57f18fa4a95378aa708ec8c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 68}
+  - name: FrogDeathAnimation_Frame_6
+    originalName: 
+    pivot: {x: 0.4857143, y: -0.035714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 132
+      width: 35
+      height: 56
+    spriteID: 1fb4b47f061cce942b25d8b56b7269e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 132}
+  - name: FrogDeathAnimation_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.03773585}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 196
+      width: 36
+      height: 53
+    spriteID: b23e7bf9b358ee244b00403f2647bef8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 50, y: 196}
+  - name: FrogDeathAnimation_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 4
+      width: 38
+      height: 42
+    spriteID: 5bba0bf1a53429e4eb45f3f06cc985aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 4}
+  - name: FrogDeathAnimation_Frame_9
+    originalName: 
+    pivot: {x: 0.4864865, y: -0.054054055}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 54
+      width: 37
+      height: 37
+    spriteID: a6ac38c8c6376464ab7215efd91230cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 54}
+  - name: FrogDeathAnimation_Frame_10
+    originalName: 
+    pivot: {x: 0.5277778, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 99
+      width: 36
+      height: 26
+    spriteID: 5f216a64461438a41af682c1db347e5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 99}
+  - name: FrogDeathAnimation_Frame_11
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 133
+      width: 35
+      height: 16
+    spriteID: 5e667a38bdf739343ade029a06de929a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 133}
+  - name: FrogDeathAnimation_Frame_12
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 157
+      width: 35
+      height: 16
+    spriteID: b45cfc21a3724b3499c277c9df18716a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 157}
+  - name: FrogDeathAnimation_Frame_13
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 181
+      width: 35
+      height: 16
+    spriteID: df130a2473f5a604796bbfd26c610c12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 181}
+  - name: FrogDeathAnimation_Frame_14
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 205
+      width: 35
+      height: 16
+    spriteID: 20602422bd7b4584882e58c0882173ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 205}
+  - name: FrogDeathAnimation_Frame_15
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 229
+      width: 35
+      height: 16
+    spriteID: 2fec2792ffeba7544977ed4bc5e84b19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 229}
+  - name: FrogDeathAnimation_Frame_16
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 198
+      y: 4
+      width: 35
+      height: 16
+    spriteID: f17c87d3970c4fa4887f5413daf83275
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 198, y: 4}
+  - name: FrogDeathAnimation_Frame_17
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 198
+      y: 28
+      width: 35
+      height: 16
+    spriteID: 04355fc851c143d4fa2a84ed6c8940a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 198, y: 28}
+  - name: FrogDeathAnimation_Frame_18
+    originalName: 
+    pivot: {x: 0.47368422, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 196
+      width: 38
+      height: 16
+    spriteID: 27ac333cd1bb2a44eb8d0ca43ba227ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 196}
+  - name: FrogDeathAnimation_Frame_19
+    originalName: 
+    pivot: {x: 0.47368422, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 220
+      width: 38
+      height: 16
+    spriteID: 6d69d0b3d5881e749b04b42a59538063
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 220}
+  - name: FrogDeathAnimation_Frame_20
+    originalName: 
+    pivot: {x: 0.42857143, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 172
+      width: 42
+      height: 16
+    spriteID: 55b036813b1382c47b5b20d05deda549
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 172}
+  - name: FrogDeathAnimation_Frame_21
+    originalName: 
+    pivot: {x: 0.39130434, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 124
+      width: 46
+      height: 16
+    spriteID: f379777f116d1144f86374fe5bbe88b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 124}
+  - name: FrogDeathAnimation_Frame_22
+    originalName: 
+    pivot: {x: 0.39130434, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 148
+      width: 46
+      height: 16
+    spriteID: d8a83d32928205e4399c46883ef38677
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 148}
+  - name: FrogDeathAnimation_Frame_23
+    originalName: 
+    pivot: {x: 0.36734694, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 100
+      width: 49
+      height: 16
+    spriteID: 16c0b5f756d85184d8b68d95fd3daaa7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 100}
+  - name: FrogDeathAnimation_Frame_24
+    originalName: 
+    pivot: {x: 0.35999998, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 4
+      width: 50
+      height: 16
+    spriteID: 63509a978861d8e4cb2c4cdddb971827
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 4}
+  - name: FrogDeathAnimation_Frame_25
+    originalName: 
+    pivot: {x: 0.35999998, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 28
+      width: 50
+      height: 16
+    spriteID: f9181b2a0408e294189c38de870463b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 28}
+  - name: FrogDeathAnimation_Frame_26
+    originalName: 
+    pivot: {x: 0.35999998, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 52
+      width: 50
+      height: 16
+    spriteID: 0b2582035a2b1164f9b63f8ed20ea8a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 52}
+  - name: FrogDeathAnimation_Frame_27
+    originalName: 
+    pivot: {x: 0.35999998, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 140
+      y: 76
+      width: 50
+      height: 16
+    spriteID: c8007240d1b65aa45923e3d5eef2caf3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 140, y: 76}
+  - name: FrogDeathAnimation_Frame_28
+    originalName: 
+    pivot: {x: 0.51428574, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 198
+      y: 52
+      width: 35
+      height: 16
+    spriteID: 683e0107ef583594dbf81e06da02ff08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 198, y: 52}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1322099828
+    name: FrogDeathAnimation
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FrogDeathAnimation_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 14
+        y: 2
+        width: 36
+        height: 56
+      spriteId: 07f5223ee14eeee4f90b1512bba47331
+    - name: FrogDeathAnimation_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 14
+        y: 2
+        width: 36
+        height: 56
+      spriteId: d1dbc2f4b2404534aad5e2526ed9b3af
+    - name: FrogDeathAnimation_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 14
+        y: 2
+        width: 36
+        height: 56
+      spriteId: ffdbb712c10fb294f99ec340b9d971a6
+    - name: FrogDeathAnimation_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 14
+        y: 2
+        width: 36
+        height: 56
+      spriteId: fbd5850c78906de4ea6fda48b8f32028
+    - name: FrogDeathAnimation_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 13
+        y: 2
+        width: 38
+        height: 56
+      spriteId: 16df2c176ca1c0b4694b632628e2ce54
+    - name: FrogDeathAnimation_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 13
+        y: 2
+        width: 38
+        height: 56
+      spriteId: 7f9d2fba57f18fa4a95378aa708ec8c4
+    - name: FrogDeathAnimation_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 15
+        y: 2
+        width: 35
+        height: 56
+      spriteId: 1fb4b47f061cce942b25d8b56b7269e2
+    - name: FrogDeathAnimation_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 14
+        y: 2
+        width: 36
+        height: 53
+      spriteId: b23e7bf9b358ee244b00403f2647bef8
+    - name: FrogDeathAnimation_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 13
+        y: 2
+        width: 38
+        height: 42
+      spriteId: 5bba0bf1a53429e4eb45f3f06cc985aa
+    - name: FrogDeathAnimation_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 14
+        y: 2
+        width: 37
+        height: 37
+      spriteId: a6ac38c8c6376464ab7215efd91230cb
+    - name: FrogDeathAnimation_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 13
+        y: 2
+        width: 36
+        height: 26
+      spriteId: 5f216a64461438a41af682c1db347e5c
+    - name: FrogDeathAnimation_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: 5e667a38bdf739343ade029a06de929a
+    - name: FrogDeathAnimation_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: b45cfc21a3724b3499c277c9df18716a
+    - name: FrogDeathAnimation_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: df130a2473f5a604796bbfd26c610c12
+    - name: FrogDeathAnimation_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: 20602422bd7b4584882e58c0882173ef
+    - name: FrogDeathAnimation_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: 2fec2792ffeba7544977ed4bc5e84b19
+    - name: FrogDeathAnimation_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: f17c87d3970c4fa4887f5413daf83275
+    - name: FrogDeathAnimation_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: 04355fc851c143d4fa2a84ed6c8940a9
+    - name: FrogDeathAnimation_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 14
+        y: 2
+        width: 38
+        height: 16
+      spriteId: 27ac333cd1bb2a44eb8d0ca43ba227ee
+    - name: FrogDeathAnimation_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 14
+        y: 2
+        width: 38
+        height: 16
+      spriteId: 6d69d0b3d5881e749b04b42a59538063
+    - name: FrogDeathAnimation_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 14
+        y: 2
+        width: 42
+        height: 16
+      spriteId: 55b036813b1382c47b5b20d05deda549
+    - name: FrogDeathAnimation_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 14
+        y: 2
+        width: 46
+        height: 16
+      spriteId: f379777f116d1144f86374fe5bbe88b5
+    - name: FrogDeathAnimation_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 14
+        y: 2
+        width: 46
+        height: 16
+      spriteId: d8a83d32928205e4399c46883ef38677
+    - name: FrogDeathAnimation_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 14
+        y: 2
+        width: 49
+        height: 16
+      spriteId: 16c0b5f756d85184d8b68d95fd3daaa7
+    - name: FrogDeathAnimation_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 14
+        y: 2
+        width: 50
+        height: 16
+      spriteId: 63509a978861d8e4cb2c4cdddb971827
+    - name: FrogDeathAnimation_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 14
+        y: 2
+        width: 50
+        height: 16
+      spriteId: f9181b2a0408e294189c38de870463b1
+    - name: FrogDeathAnimation_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 14
+        y: 2
+        width: 50
+        height: 16
+      spriteId: 0b2582035a2b1164f9b63f8ed20ea8a2
+    - name: FrogDeathAnimation_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 14
+        y: 2
+        width: 50
+        height: 16
+      spriteId: c8007240d1b65aa45923e3d5eef2caf3
+    - name: FrogDeathAnimation_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 14
+        y: 2
+        width: 35
+        height: 16
+      spriteId: 683e0107ef583594dbf81e06da02ff08
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
