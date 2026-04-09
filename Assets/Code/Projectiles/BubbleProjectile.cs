@@ -28,10 +28,14 @@ public class BubbleProjectile : Projectile
 
             if (Input.GetMouseButton(0) && !fired && charge <= chargeUpTime)
             {
-                transform.position = startPos.position;
+                transform.position = new Vector3(
+                    startPos.position.x,
+                    PlayerController.Instance.transform.position.y,
+                    startPos.position.z
+                );
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
-                travelDir = transform.position - controller.transform.position;
+                travelDir = transform.position - controller.wandToPlayer;
                 //travelDir = travelDir.normalized;
                 Debug.DrawRay(transform.position, travelDir, Color.magenta);
             }
@@ -49,12 +53,18 @@ public class BubbleProjectile : Projectile
         yield return null;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && fired)
         {
             Debug.Log("Hit enemy");
             Destroy(collision.gameObject);
+
+            charge -= 0.5f;
+            transform.localScale = Vector3.one * charge / chargeUpTime;
+            travelSpeed *= 0.8f;
+
+            if (charge < 0.1f) Destroy(gameObject);
         }
     }
 }

@@ -23,7 +23,7 @@ public class WandController : MonoBehaviour
         cam = Camera.main;
     }
 
-    Vector3 wandToPlayer;
+    public Vector3 wandToPlayer;
     Vector3 playerLook = Vector3.zero;
 
     private void Update()

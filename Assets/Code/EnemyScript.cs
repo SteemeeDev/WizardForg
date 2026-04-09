@@ -67,21 +67,21 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    IEnumerator OnCollisionEnter(Collision collision)
+    IEnumerator OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player"))
         {
 
             Debug.Log("Hit player!");
-            HealthManager plrHealth = collision.gameObject.GetComponent<HealthManager>();
+            HealthManager plrHealth = collider.gameObject.GetComponent<HealthManager>();
 
             plrHealth.health -= 1;
 
             playerIsTarget = false;
 
-            Agent.SetDestination((transform.position - playerPosition.position).normalized * 5);
+            Agent.SetDestination(playerPosition.position + (transform.position - playerPosition.position).normalized * 1.3f);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
 
             playerIsTarget = true;
         }
