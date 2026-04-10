@@ -1,33 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class HealthManager : MonoBehaviour
 {
-
     public int health = 10;
-    public GameObject[] enemy;
-    [SerializeField]  WandController wandController;
-    [SerializeField] Animator animator;
+    [SerializeField] WandController wandController;
+    [SerializeField] Animator playerAnimator;
 
+    bool playerIsDead = false;
 
     private void Update()
     {
-        if (health == 0)
+        if (health <= 0 && !playerIsDead)
         {
-            health = -1;
+            playerIsDead = true;
 
-            GameObject[]enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
 
             foreach (GameObject go in enemy)
             {
-                /*if (go != null)
-                {
-                    continue;
-                }
-                */
                 Destroy(go);
             }
 
@@ -36,7 +26,7 @@ public class HealthManager : MonoBehaviour
             wandController.gameObject.SetActive(false);
 
             
-            animator.SetTrigger("Die");
+            playerAnimator.SetTrigger("Die");
             
         }
         

@@ -17,19 +17,14 @@ public class WandController : MonoBehaviour
 
     public float rot = 0;
 
-    Camera cam;
-
-    private void Start()
-    {
-        cam = Camera.main;
-    }
+    [SerializeField] Camera playerCam;
 
     public Vector3 wandToPlayer;
     Vector3 playerLook = Vector3.zero;
 
     public virtual void Update()
     {
-        Vector3 playerScreenPos = cam.WorldToScreenPoint(playerTransform.position);
+        Vector3 playerScreenPos = playerCam.WorldToScreenPoint(playerTransform.position);
         Vector3 mousePos = Input.mousePosition;
 
         playerLook = playerScreenPos - mousePos;
