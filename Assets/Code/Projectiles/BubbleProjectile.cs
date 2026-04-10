@@ -15,7 +15,6 @@ public class BubbleProjectile : Projectile
     public override void Update()
     {
         base.Update();
-
     }
 
     Vector3 travelDir = Vector3.zero;
@@ -35,8 +34,8 @@ public class BubbleProjectile : Projectile
                 );
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
-                travelDir = transform.position - controller.wandToPlayer;
-                //travelDir = travelDir.normalized;
+                travelDir = -(PlayerController.Instance.transform.position - controller.transform.position);
+                travelDir = travelDir.normalized;
                 Debug.DrawRay(transform.position, travelDir, Color.magenta);
             }
             else
@@ -65,6 +64,11 @@ public class BubbleProjectile : Projectile
             travelSpeed *= 0.8f;
 
             if (charge < 0.1f) Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Environment"))
+        {
+            Destroy(gameObject);
         }
     }
 }
