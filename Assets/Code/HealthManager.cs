@@ -19,16 +19,16 @@ public class HealthManager : MonoBehaviour
         {
             health = -1;
 
-            enemy = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[]enemy = GameObject.FindGameObjectsWithTag("Enemy");
 
             foreach (GameObject go in enemy)
             {
-                Destroy(go);
-                
-                if (go != null)
+                /*if (go != null)
                 {
-                    break;
+                    continue;
                 }
+                */
+                Destroy(go);
             }
 
             //disables player movement and wand

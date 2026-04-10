@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -31,5 +32,12 @@ public class PlayerController : MonoBehaviour
         moveDir = Vector3.Normalize(moveDir);
 
         controller.Move(moveDir * Time.deltaTime * moveSpeed);
+
+        /* dont work rn
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Brugertest");
+        }
+        */
     }
 }
