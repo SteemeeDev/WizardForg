@@ -72,5 +72,3 @@ public class BubbleProjectile : Projectile
         }
     }
 }
-
-
