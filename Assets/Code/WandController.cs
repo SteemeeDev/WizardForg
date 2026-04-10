@@ -10,7 +10,8 @@ public class WandController : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] Animator playerAnimator;
     [SerializeField] SpriteRenderer playerRenderer;
-    [SerializeField] Transform firePos;
+    public Transform firePos;
+    [SerializeField] float distFromPlayer = 1f;
 
     public float atan2;
 
@@ -26,7 +27,7 @@ public class WandController : MonoBehaviour
     public Vector3 wandToPlayer;
     Vector3 playerLook = Vector3.zero;
 
-    private void Update()
+    public virtual void Update()
     {
         Vector3 playerScreenPos = cam.WorldToScreenPoint(playerTransform.position);
         Vector3 mousePos = Input.mousePosition;
@@ -34,7 +35,7 @@ public class WandController : MonoBehaviour
         playerLook = playerScreenPos - mousePos;
         playerLook = playerLook.normalized;
 
-        wandToPlayer = playerTransform.position - Quaternion.Euler(0, 45, 0) * new Vector3(playerLook.x, 0, playerLook.y);
+        wandToPlayer = playerTransform.position - Quaternion.Euler(0, 45, 0) * new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
         transform.position = wandToPlayer;
 
         atan2 = Mathf.Atan2(playerLook.y, playerLook.x);
@@ -42,19 +43,23 @@ public class WandController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject proj = Instantiate(projectile);
-            Projectile projManager = proj.GetComponent<Projectile>();
-
-            Vector3 fireDir = (transform.position - firePos.position);
-
-            StartCoroutine(
-                projManager.FireProjectile(this, firePos)
-            );
+            FireWand();
         }
 
         RotatePlayer();
     }
 
+    public virtual void FireWand()
+    {
+        GameObject proj = Instantiate(projectile);
+        Projectile projManager = proj.GetComponent<Projectile>();
+
+        Vector3 fireDir = (transform.position - firePos.position);
+
+        StartCoroutine(
+            projManager.FireProjectile(this, firePos)
+        );
+    }
     void RotatePlayer()
     {
         float adjustedAtan = Mathf.Atan2(playerLook.x, playerLook.y) * (180f / Mathf.PI);
