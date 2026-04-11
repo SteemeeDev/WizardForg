@@ -1,9 +1,5 @@
-using Cinemachine.Utility;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngineInternal;
-using static UnityEngine.UI.Image;
+
 
 public class LazerWand : WandController
 {
@@ -41,7 +37,7 @@ public class LazerWand : WandController
 
         if (Physics.BoxCast(
             center: firePos.position - firePos.up * 2,
-            halfExtents: new Vector3(0.1f, 0.01f, 20f),
+            halfExtents: new Vector3(0.01f, 0.01f, 20f),
             direction: firePos.up,
             out RaycastHit hit,
             orientation: firePos.rotation,
@@ -49,18 +45,36 @@ public class LazerWand : WandController
             layerMask: layerMask
         ))
         {
-            if (hit.distance < 2f) lazerRenderer.enabled = false; 
-            else lazerRenderer.enabled = true;
+            Debug.Log("Lazer Hit: " + hit.transform.name);
 
-            Vector3 firepos2 = firePos.position + (firePos.up * hit.distance) - firePos.up * 2;
+            if (Mathf.Sign(Vector3.Dot(firePos.up, (hit.point - firePos.position))) == -1f)
+            {
+                lazerRenderer.enabled = false;
+                firePoint2.gameObject.SetActive(false);
+            }
+            else
+            {
+                lazerRenderer.enabled = true;
+                firePoint2.gameObject.SetActive(true);
+            }
+
+            float angle = Mathf.Asin(firePos.up.y);
+            Vector3 firepos2 =
+                firePos.position
+                + (firePos.up * hit.distance)
+                - firePos.up * 2f
+            ;
+
+            Debug.Log(Mathf.Abs(Mathf.Sin(angle)));
+
             firePoint2.position = firepos2;
-            firePoint2.gameObject.SetActive(true);
             lazerRenderer.SetPosition(1, firepos2);
 
              if (hit.transform.gameObject.CompareTag("Enemy"))
              {
                  Destroy(hit.transform.gameObject);
-             }
+                 firePoint2.gameObject.SetActive(true);
+            }
         }
         else
         {

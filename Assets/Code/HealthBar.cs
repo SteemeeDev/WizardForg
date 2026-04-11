@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            hearts[i].color = new Color(1f, 1f, 1f, 0.5f);
+            hearts[i].color = new Color(1f, 1f, 1f, 0.2f);
         }
 
         for (int i = 0; i < healthManager.health; i++)
