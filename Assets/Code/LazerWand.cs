@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 
@@ -34,7 +35,6 @@ public class LazerWand : WandController
         lazerRenderer.enabled = true;
         lazerRenderer.SetPosition(0, firePos.position);
 
-
         if (Physics.BoxCast(
             center: firePos.position - firePos.up * 2,
             halfExtents: new Vector3(0.01f, 0.01f, 20f),
@@ -45,7 +45,7 @@ public class LazerWand : WandController
             layerMask: layerMask
         ))
         {
-            Debug.Log("Lazer Hit: " + hit.transform.name);
+            Debug.Log("Lazer Hit: " + hit.transform.name + " With tag " + hit.transform.gameObject.tag);
 
             if (Mathf.Sign(Vector3.Dot(firePos.up, (hit.point - firePos.position))) == -1f)
             {
@@ -58,14 +58,16 @@ public class LazerWand : WandController
                 firePoint2.gameObject.SetActive(true);
             }
 
-            float angle = Mathf.Asin(firePos.up.y);
+            float distance = (hit.point - firePos.position).magnitude;
+            float angle = Mathf.Asin(Vector3.Dot(firePos.up, (hit.point - firePos.position).normalized));
+
             Vector3 firepos2 =
-                firePos.position
-                + (firePos.up * hit.distance)
-                - firePos.up * 2f
+                firePos.position 
+                + (firePos.up * distance) * angle * 0.85f
+                - firePos.up * 0.1f
             ;
 
-            Debug.Log(Mathf.Abs(Mathf.Sin(angle)));
+            Debug.Log(angle);
 
             firePoint2.position = firepos2;
             lazerRenderer.SetPosition(1, firepos2);

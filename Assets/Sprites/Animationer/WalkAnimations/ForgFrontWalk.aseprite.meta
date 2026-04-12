@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 957b624bba53d434c806a386b0db09e9
+guid: 7ea170773f9ca234fb3f264b0a856da7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639086628177423559
+  platformSettingsDirtyTick: 639115946682063572
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,7 +119,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: FrogFrontWalk_Frame_0
+  - name: ForgFrontWalk_Frame_0
     originalName: 
     pivot: {x: 0.5, y: -0.035714287}
     alignment: 9
@@ -127,10 +127,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 195
+      y: 4
       width: 36
       height: 56
-    spriteID: 676c20034967e664fab624cf0109936d
+    spriteID: 0140ec8570a0e1b4592e5cdb48e1cdbb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -138,8 +138,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 195}
-  - name: FrogFrontWalk_Frame_1
+    uvTransform: {x: 4, y: 4}
+  - name: ForgFrontWalk_Frame_1
     originalName: 
     pivot: {x: 0.5, y: -0.036363635}
     alignment: 9
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 4
       width: 36
       height: 55
-    spriteID: 9b84614ecc667c347a70c140050ef2c0
+    spriteID: 03b15309421fc9b478c54cf9053bfe57
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,18 +159,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 48, y: 4}
-  - name: FrogFrontWalk_Frame_2
+  - name: ForgFrontWalk_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 48
-      y: 67
+      x: 4
+      y: 68
       width: 36
       height: 55
-    spriteID: 8cecb20bde1ebdd438fb1fee21a1d39f
+    spriteID: 002ced9660958fd41a429074bd9fd365
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +178,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 48, y: 67}
-  - name: FrogFrontWalk_Frame_3
+    uvTransform: {x: 4, y: 68}
+  - name: ForgFrontWalk_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.69945353}
+    pivot: {x: 0.5, y: -0.018518519}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 48
+      y: 68
       width: 36
-      height: 183
-    spriteID: bfe848e4bb8db0e47a6138347ba4b1e7
+      height: 54
+    spriteID: af5313c0042f14146bfe920c98c1924e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,48 +198,48 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 48, y: 68}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -386705866
-    name: FrogFrontWalk
+    guid: 174545656
+    name: ForgFrontWalk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: FrogFrontWalk_Frame_0
+    - name: ForgFrontWalk_Frame_0
       frameIndex: 0
       cellRect:
         x: 14
         y: 2
         width: 36
         height: 56
-      spriteId: 676c20034967e664fab624cf0109936d
-    - name: FrogFrontWalk_Frame_1
+      spriteId: 0140ec8570a0e1b4592e5cdb48e1cdbb
+    - name: ForgFrontWalk_Frame_1
       frameIndex: 1
       cellRect:
         x: 14
         y: 2
         width: 36
         height: 55
-      spriteId: 9b84614ecc667c347a70c140050ef2c0
-    - name: FrogFrontWalk_Frame_2
+      spriteId: 03b15309421fc9b478c54cf9053bfe57
+    - name: ForgFrontWalk_Frame_2
       frameIndex: 2
       cellRect:
         x: 14
         y: 0
         width: 36
         height: 55
-      spriteId: 8cecb20bde1ebdd438fb1fee21a1d39f
-    - name: FrogFrontWalk_Frame_3
+      spriteId: 002ced9660958fd41a429074bd9fd365
+    - name: ForgFrontWalk_Frame_3
       frameIndex: 3
       cellRect:
         x: 14
-        y: -128
+        y: 1
         width: 36
-        height: 183
-      spriteId: bfe848e4bb8db0e47a6138347ba4b1e7
+        height: 54
+      spriteId: af5313c0042f14146bfe920c98c1924e
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -268,18 +268,6 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Server
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
