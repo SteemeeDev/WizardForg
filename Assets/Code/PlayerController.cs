@@ -19,19 +19,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    [SerializeField] WandController[] wands;
+    [SerializeField] int currentWandIndex;
+    WandController currentWand;
 
     [SerializeField] CharacterController controller;
     [SerializeField] float moveSpeed = 4f;
+
+    private void Start()
+    {
+        SwitchWand();
+    }
 
     private void Update()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveDir = (Quaternion.Euler(0, 45, 0) * new Vector3(inputX, 0, inputY));
+        Vector3 moveDir = new Vector3(inputX, 0, inputY);
         moveDir = Vector3.Normalize(moveDir);
+        moveDir += new Vector3(0, 0, inputY * 0.5f); // Y movement feels slower for some reason?
+        moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
+
+        Debug.Log(moveDir);
 
         controller.Move(moveDir * Time.deltaTime * moveSpeed);
+
+        // Yandere dev ahh code :sob:
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWandIndex = 0;
+            SwitchWand();
+        }else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWandIndex = 1;
+            SwitchWand();
+        }
 
         /* dont work rn
         if (Input.GetKeyDown(KeyCode.R))
@@ -39,5 +62,12 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Brugertest");
         }
         */
+    }
+
+    void SwitchWand()
+    {
+        if (currentWand != null) currentWand.gameObject.SetActive(false);
+        currentWand = wands[currentWandIndex];
+        currentWand.gameObject.SetActive(true);
     }
 }

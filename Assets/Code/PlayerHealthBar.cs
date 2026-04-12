@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class HealthBar : MonoBehaviour
+public class PlayerHealthBar : MonoBehaviour
 {
     [SerializeField] Image[] hearts;
-    [SerializeField] HealthManager healthManager;
+    [SerializeField] PlayerHealthManager healthManager;
 
     private void Start()
     {

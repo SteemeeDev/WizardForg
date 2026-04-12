@@ -51,7 +51,7 @@ public class WandController : MonoBehaviour
 
         Vector3 fireDir = (transform.position - firePos.position);
 
-        StartCoroutine(
+        projManager.StartCoroutine(
             projManager.FireProjectile(this, firePos)
         );
     }

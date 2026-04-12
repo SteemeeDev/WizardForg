@@ -11,10 +11,10 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float AttackRange = 2.5f;
     [SerializeField] Rigidbody rb;
     [SerializeField] Animator animator;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     int lockPos = 0;
     Transform playerPosition;
-    private NavMeshAgent Agent;
+    public NavMeshAgent Agent;
 
     bool playerIsTarget = true;
    
@@ -71,11 +71,10 @@ public class EnemyScript : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-
             Debug.Log("Hit player!");
-            HealthManager plrHealth = collider.gameObject.GetComponent<HealthManager>();
+            PlayerHealthManager plrHealth = collider.gameObject.GetComponent<PlayerHealthManager>();
 
-            plrHealth.health -= 1;
+            plrHealth.TakeDamage(1);
 
             playerIsTarget = false;
 

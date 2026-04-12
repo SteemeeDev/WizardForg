@@ -10,7 +10,9 @@ public class BubbleProjectile : Projectile
     public float charge = 0f;
 
     bool fired = false;
-    
+
+    // Debounce variable that triggers the onShoot
+    bool onFired = false;
 
     public override void Update()
     {
@@ -24,8 +26,7 @@ public class BubbleProjectile : Projectile
         {
             timeAlive += Time.deltaTime;
 
-
-            if (Input.GetMouseButton(0) && !fired && charge <= chargeUpTime)
+            if (Input.GetMouseButton(0) && !fired && charge <= chargeUpTime && controller != null)
             {
                 transform.position = new Vector3(
                     startPos.position.x,
@@ -37,6 +38,10 @@ public class BubbleProjectile : Projectile
                 travelDir = -(PlayerController.Instance.transform.position - controller.transform.position);
                 travelDir = travelDir.normalized;
                 Debug.DrawRay(transform.position, travelDir, Color.magenta);
+            }
+            else if (fired && !onFired)
+            {
+                OnFireWand();
             }
             else
             {
@@ -52,12 +57,28 @@ public class BubbleProjectile : Projectile
         yield return null;
     }
 
+    // We do an extra check for enemys when firing since, if the bubble is created inside an enemy, it wont trigger the OnTriggerEnter and thus wont deal damage
+    void OnFireWand()
+    {
+        onFired = true;
+       // Debug.Log("Fired bubble awnd");
+        Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
+        foreach (Collider hit in hits)
+        {
+            if (hit.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Hit enemy");
+                hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && fired)
         {
             Debug.Log("Hit enemy");
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
 
             charge -= 0.5f;
             transform.localScale = Vector3.one * charge / chargeUpTime;
