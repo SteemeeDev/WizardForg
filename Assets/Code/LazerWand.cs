@@ -46,7 +46,7 @@ public class LazerWand : WandController
             layerMask: layerMask
         ))
         {
-            Debug.Log("Lazer Hit: " + hit.transform.name + " With tag " + hit.transform.gameObject.tag);
+            //Debug.Log("Lazer Hit: " + hit.transform.name + " With tag " + hit.transform.gameObject.tag);
 
             if (Mathf.Sign(Vector3.Dot(firePos.up, (hit.point - firePos.position))) == -1f)
             {

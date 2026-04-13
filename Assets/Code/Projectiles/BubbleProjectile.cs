@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class BubbleProjectile : Projectile
     // Debounce variable that triggers the onShoot
     bool onFired = false;
 
+
+    List<GameObject> hitEnemies = new List<GameObject>();
     public override void Update()
     {
         base.Update();
@@ -41,6 +44,7 @@ public class BubbleProjectile : Projectile
             }
             else if (fired && !onFired)
             {
+                onFired = true;
                 OnFireWand();
             }
             else
@@ -60,7 +64,6 @@ public class BubbleProjectile : Projectile
     // We do an extra check for enemys when firing since, if the bubble is created inside an enemy, it wont trigger the OnTriggerEnter and thus wont deal damage
     void OnFireWand()
     {
-        onFired = true;
        // Debug.Log("Fired bubble awnd");
         Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
         foreach (Collider hit in hits)
@@ -69,6 +72,12 @@ public class BubbleProjectile : Projectile
             {
                 Debug.Log("Hit enemy");
                 hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
+
+                charge -= 0.5f;
+                transform.localScale = Vector3.one * charge / chargeUpTime;
+                travelSpeed *= 0.8f;
+
+                if (charge < 0.1f) Destroy(gameObject);
             }
         }
     }
@@ -77,6 +86,8 @@ public class BubbleProjectile : Projectile
     {
         if (collision.gameObject.CompareTag("Enemy") && fired)
         {
+            if (hitEnemies.Contains(collision.gameObject)) return;
+            else hitEnemies.Add(collision.gameObject);
             Debug.Log("Hit enemy");
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
 

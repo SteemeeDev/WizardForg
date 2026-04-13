@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d4563b7ca8152a42b196425fa734818, type: 2}
   m_sharedMaterial: {fileID: 5620914554957888312, guid: 3d4563b7ca8152a42b196425fa734818,
@@ -247,7 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8009277067530022367}
   - component: {fileID: 6687071616979109664}
-  - component: {fileID: 7460130599807409595}
   - component: {fileID: 9075026058374249095}
   m_Layer: 10
   m_Name: DamageNumber
@@ -265,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 6442975612575523806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -6.26, z: -1.38}
+  m_LocalPosition: {x: 5.51637, y: -6.335575, z: -3.913705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -299,27 +298,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &7460130599807409595
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442975612575523806}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9075026058374249095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,5 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a26ba19a3255540a235daa294f6105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 9216607495104115645}
+  damageText: {fileID: 9216607495104115645}
+  rb: {fileID: 6687071616979109664}
+  damageAmount: 7.4422708
   lifeTime: 1
+  fallSpeed: 3

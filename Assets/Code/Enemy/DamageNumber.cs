@@ -1,29 +1,43 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class DamageNumber : MonoBehaviour
 {
-    public TMP_Text text;
-    [SerializeField] float lifeTime = 3f;
-    float timeAlive;
-    Rigidbody rb;
+    [SerializeField] TMP_Text damageText;
+    [SerializeField] Rigidbody rb;
 
-    float fallSpeed = 3f;
-    private void Start()
+    public float damageAmount;
+
+    [SerializeField] float lifeTime = 3f;
+    [SerializeField] float fallSpeed = 3f;
+
+
+    float timeAlive;
+    public void SpawnObject(Vector3 spawnPos)
     {
-        text = GetComponent<TMP_Text>();
-        rb = GetComponent<Rigidbody>();
+        damageText.text = ((int)damageAmount).ToString();
+        transform.position = spawnPos;
+
         rb.velocity = new Vector3(Random.Range(-3f, 3f), 2, Random.Range(-3f, 3f));
+
+        StartCoroutine(IEUpdate());
     }
 
-    private void Update()
-    {
-        rb.velocity -= Vector3.up * Time.deltaTime * Time.deltaTime * fallSpeed;
 
-        timeAlive += Time.deltaTime;
-        if (timeAlive > lifeTime)
-        {
-            Destroy(gameObject);
+    IEnumerator IEUpdate()
+    {
+        while (true)
+        {   
+            rb.velocity -= Vector3.up * Time.deltaTime * Time.deltaTime * fallSpeed;
+
+            timeAlive += Time.deltaTime;
+            if (timeAlive > lifeTime)
+            {
+                Destroy(gameObject);
+            }
+
+            yield return null;
         }
     }
 }

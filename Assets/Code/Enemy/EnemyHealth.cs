@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] EnemyScript enemyScript;
-    [SerializeField] GameObject damageNumber;
+    [SerializeField] GameObject damageNumberPrefab;
 
     public float health = 100f;
 
@@ -22,10 +22,11 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GameObject damageNr = Instantiate(damageNumber);
-        DamageNumber damageNumberManager = damageNumber.GetComponent<DamageNumber>();
-        damageNumberManager.text.text = ((int)damage).ToString();
+        GameObject damageNr = Instantiate(damageNumberPrefab, transform.position, Quaternion.identity);
         damageNr.transform.position = transform.position;
+        DamageNumber damageNumberManager = damageNr.GetComponent<DamageNumber>();
+        damageNumberManager.damageAmount = damage;
+        damageNumberManager.SpawnObject(transform.position);
     }
 
     private float originalSpeed;
