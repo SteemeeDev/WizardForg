@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyScript: {fileID: 7721700468251291217}
+  damageNumber: {fileID: 6442975612575523806, guid: 4c061715683e4a44b881644eaf9d2c55,
+    type: 3}
   health: 100
 --- !u!1 &3209024491973344393
 GameObject:
