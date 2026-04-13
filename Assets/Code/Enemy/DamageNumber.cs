@@ -5,6 +5,7 @@ public class DamageNumber : MonoBehaviour
 {
     public TMP_Text text;
     [SerializeField] float lifeTime = 3f;
+    float timeAlive;
     Rigidbody rb;
 
     float fallSpeed = 3f;
@@ -18,5 +19,11 @@ public class DamageNumber : MonoBehaviour
     private void Update()
     {
         rb.velocity -= Vector3.up * Time.deltaTime * Time.deltaTime * fallSpeed;
+
+        timeAlive += Time.deltaTime;
+        if (timeAlive > lifeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 }

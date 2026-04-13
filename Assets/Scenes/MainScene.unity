@@ -1250,11 +1250,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageNumber
       objectReference: {fileID: 0}
-    - target: {fileID: 6442975612575523806, guid: 4c061715683e4a44b881644eaf9d2c55,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8009277067530022367, guid: 4c061715683e4a44b881644eaf9d2c55,
         type: 3}
       propertyPath: m_LocalPosition.x
