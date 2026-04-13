@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] WandController[] wands;
     [SerializeField] int currentWandIndex;
-    WandController currentWand;
+    public WandController currentWand;
 
     [SerializeField] CharacterController controller;
     [SerializeField] float moveSpeed = 4f;
@@ -41,8 +41,6 @@ public class PlayerController : MonoBehaviour
         moveDir += new Vector3(0, 0, inputY * 0.5f); // Y movement feels slower for some reason?
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
 
-        Debug.Log(moveDir);
-
         controller.Move(moveDir * Time.deltaTime * moveSpeed);
 
         // Yandere dev ahh code :sob:
@@ -56,12 +54,7 @@ public class PlayerController : MonoBehaviour
             SwitchWand();
         }
 
-        /* dont work rn
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Brugertest");
-        }
-        */
+       
     }
 
     void SwitchWand()

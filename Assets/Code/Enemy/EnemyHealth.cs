@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] EnemyScript enemyScript;
+    [SerializeField] GameObject damageNumber;
 
     public float health = 100f;
 
@@ -19,6 +21,11 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        GameObject damageNr = Instantiate(damageNumber);
+        DamageNumber damageNumberManager = damageNumber.GetComponent<DamageNumber>();
+        damageNumberManager.text.text = ((int)damage).ToString();
+        damageNr.transform.position = transform.position;
     }
 
     private float originalSpeed;

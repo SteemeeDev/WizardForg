@@ -5250,6 +5250,7 @@ MonoBehaviour:
   - {fileID: 4861494231999287138}
   - {fileID: 2892760929318302953}
   currentWandIndex: 0
+  currentWand: {fileID: 0}
   controller: {fileID: 6871766495978463219}
   moveSpeed: 4
 --- !u!114 &1882492081566819748
@@ -5268,6 +5269,7 @@ MonoBehaviour:
   wandController: {fileID: 2892760929318302953}
   playerAnimator: {fileID: 3529760224825020680}
   iFrames: 0.5
+  healthBar: {fileID: 0}
 --- !u!65 &6226564305540879953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5329,7 +5331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2212549844166870135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5586,6 +5588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BubbleWand
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: ca235c29f4490b74f8dd1c1832ce9497,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}

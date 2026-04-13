@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] WandController wandController;
     [SerializeField] Animator playerAnimator;
     [SerializeField] float iFrames = 0.5f;
+    [SerializeField] GameObject healthBar;
 
     bool canTakeDamage = true;
     bool playerIsDead = false;
@@ -29,12 +31,24 @@ public class PlayerHealthManager : MonoBehaviour
                 Destroy(go);
             }
 
+            healthBar.SetActive(false);
+
             //disables player movement and wand
-            GetComponent<PlayerController>().enabled = false;
-            wandController.gameObject.SetActive(false);
+            PlayerController plrController = GetComponent<PlayerController>();
+            plrController.enabled = false;
+            plrController.currentWand.gameObject.SetActive(false);
 
 
             playerAnimator.SetTrigger("Die");
+
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Brugertest");
         }
     }
 
