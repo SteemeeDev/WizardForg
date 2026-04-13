@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] WandController[] wands;
     [SerializeField] int currentWandIndex;
-    WandController currentWand;
+    public WandController currentWand;
 
     [SerializeField] CharacterController controller;
     [SerializeField] float moveSpeed = 4f;
@@ -56,12 +56,7 @@ public class PlayerController : MonoBehaviour
             SwitchWand();
         }
 
-        /* dont work rn
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Brugertest");
-        }
-        */
+       
     }
 
     void SwitchWand()
