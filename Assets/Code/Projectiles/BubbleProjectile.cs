@@ -39,7 +39,7 @@ public class BubbleProjectile : Projectile
                 + Quaternion.Euler(0,45,0) * new Vector3(
                     0,
                     0,
-                    -controller.wandToPlayer.z * 5
+                    -controller.wandToPlayer.z * 2
                 );
                 
 
