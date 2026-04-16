@@ -13,10 +13,10 @@ public class WandController : MonoBehaviour
 
     public float rot = 0;
 
-    [SerializeField] Camera playerCam;
+    public Camera playerCam;
 
     public Vector3 wandToPlayer;
-    Vector3 playerLook = Vector3.zero;
+    public Vector3 playerLook = Vector3.zero;
 
     public virtual void Update()
     {
@@ -26,8 +26,8 @@ public class WandController : MonoBehaviour
         playerLook = playerScreenPos - mousePos;
         playerLook = playerLook.normalized;
 
-        wandToPlayer = playerTransform.position - Quaternion.Euler(0, 45, 0) * new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
-        transform.position = wandToPlayer;
+        transform.position = playerTransform.position - Quaternion.Euler(0, 45, 0) * new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
+        wandToPlayer = new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
 
         atan2 = Mathf.Atan2(playerLook.y, playerLook.x);
         transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 90f);

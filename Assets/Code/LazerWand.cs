@@ -7,7 +7,12 @@ public class LazerWand : WandController
     [SerializeField] LineRenderer lazerRenderer;
     [SerializeField] float maxLazerLength = 20f;
     [SerializeField] Transform firePoint2;
-    public float damagePerSecond = 40f;
+    public float damagePerTick = 5f;
+    public int ticksPerSecond = 10;
+
+    float timeSinceLastTick = 0f;
+
+    EnemyHealth targetedEnemy;
 
     int layerMask;
 
@@ -28,6 +33,16 @@ public class LazerWand : WandController
         if (Input.GetMouseButton(0))
         {
             FireWand();
+        }
+
+        timeSinceLastTick += Time.deltaTime;
+        if (timeSinceLastTick >= 1f / ticksPerSecond)
+        {
+            timeSinceLastTick = 0f;
+            if (targetedEnemy != null)
+            {
+                targetedEnemy.TakeDamage(damagePerTick);
+            }
         }
     }
 
@@ -72,9 +87,13 @@ public class LazerWand : WandController
 
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
-                hit.transform.gameObject.GetComponent<EnemyHealth>().TakeDamage(damagePerSecond * Time.deltaTime);
+                if (targetedEnemy == null || targetedEnemy.transform != hit.transform) targetedEnemy = hit.transform.gameObject.GetComponent<EnemyHealth>();
                 firepos2 += firePos.up * 0.2f;
                 firePoint2.gameObject.SetActive(true);
+            }
+            else
+            {
+                targetedEnemy = null;
             }
 
             firePoint2.position = firepos2;
@@ -82,6 +101,7 @@ public class LazerWand : WandController
         }
         else
         {
+            targetedEnemy = null;
             Vector3 firepos2 = firePos.position + (firePos.up * maxLazerLength);
             firePoint2.position = firepos2;
             lazerRenderer.SetPosition(1, firepos2);

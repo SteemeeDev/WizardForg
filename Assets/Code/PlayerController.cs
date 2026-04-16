@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveDir = new Vector3(inputX, 0, inputY);
         moveDir = Vector3.Normalize(moveDir);
-        moveDir += new Vector3(0, 0, inputY * 0.5f); // Y movement feels slower for some reason?
+        moveDir += new Vector3(0, 0, inputY * 0.6f); // Y movement feels slower for some reason?
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
 
         controller.Move(moveDir * Time.deltaTime * moveSpeed);

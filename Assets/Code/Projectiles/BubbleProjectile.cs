@@ -35,11 +35,20 @@ public class BubbleProjectile : Projectile
                     startPos.position.x,
                     PlayerController.Instance.transform.position.y,
                     startPos.position.z
+                )
+                + Quaternion.Euler(0,45,0) * new Vector3(
+                    0,
+                    0,
+                    -controller.wandToPlayer.z * 5
                 );
+                
+
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
-                travelDir = -(PlayerController.Instance.transform.position - controller.transform.position);
+
+                travelDir = Quaternion.Euler(0,45,0) * -new Vector3(controller.playerLook.x, 0, controller.playerLook.y);
                 travelDir = travelDir.normalized;
+
                 Debug.DrawRay(transform.position, travelDir, Color.magenta);
             }
             else if (fired && !onFired)
