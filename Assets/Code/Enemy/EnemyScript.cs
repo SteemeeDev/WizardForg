@@ -13,23 +13,24 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] Animator animator;
     public SpriteRenderer spriteRenderer;
     int lockPos = 0;
-    Transform playerPosition;
+    public Transform playerPosition;
     public NavMeshAgent Agent;
 
     bool playerIsTarget = true;
    
 
-    Vector3 targetPos = Vector3.zero;
+    public Vector3 targetPos = Vector3.zero;
    
 
-    private void Start()
+    private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
         playerPosition = PlayerController.Instance.transform;
-
+    }
+    private void Start()
+    {
         StartCoroutine(EnemyPathFinding());
     }
-
     Vector3 enemyToPlayer;
 
     private void Update()

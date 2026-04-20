@@ -41,19 +41,21 @@ public class PlayerController : MonoBehaviour
         moveDir = Vector3.Normalize(moveDir);
 
         rigidBody.MovePosition(transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
+    }
 
+    private void Update()
+    {
         // Yandere dev ahh code :sob:
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentWandIndex = 0;
             SwitchWand();
-        }else if (Input.GetKeyDown(KeyCode.Alpha2))
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             currentWandIndex = 1;
             SwitchWand();
         }
-
-       
     }
 
     void SwitchWand()
