@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DeathScreen : MonoBehaviour
 {
-   public void retry()
+    [SerializeField] GameObject deathScreen;
+
+    public void retry()
     {
         SceneManager.LoadScene("Brugertest");
     }
@@ -13,5 +15,10 @@ public class DeathScreen : MonoBehaviour
     public void QuitToMain()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ShowDeathScreen()
+    {
+        deathScreen.SetActive(true);
     }
 }

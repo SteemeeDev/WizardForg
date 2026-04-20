@@ -107,7 +107,7 @@ AnimationClip:
     - time: 2.8
       value: {fileID: 6660806061436396712, guid: 53b28dd2f69045744a1fe7bd5fce639b,
         type: 3}
-    - time: 2.8999999
+    - time: 2.9
       value: {fileID: 6660806061436396712, guid: 53b28dd2f69045744a1fe7bd5fce639b,
         type: 3}
     attribute: m_Sprite
@@ -167,7 +167,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.9099998
+    m_StopTime: 2.91
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -186,4 +186,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 2.9
+    functionName: ShowDeathScreen
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

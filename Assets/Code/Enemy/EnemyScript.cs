@@ -25,10 +25,10 @@ public class EnemyScript : MonoBehaviour
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
-        playerPosition = PlayerController.Instance.transform;
     }
     private void Start()
     {
+        playerPosition = PlayerController.Instance.transform;
         StartCoroutine(EnemyPathFinding());
     }
     Vector3 enemyToPlayer;

@@ -9,7 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] Animator playerAnimator;
     [SerializeField] float iFrames = 0.5f;
     [SerializeField] GameObject healthBar;
-    [SerializeField] GameObject deathScreen;
+    
 
     bool canTakeDamage = true;
     bool playerIsDead = false;
@@ -33,7 +33,7 @@ public class PlayerHealthManager : MonoBehaviour
             }
 
             healthBar.SetActive(false);
-            deathScreen.SetActive(true);
+            
 
             //disables player movement and wand
             PlayerController plrController = GetComponent<PlayerController>();
