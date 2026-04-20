@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int currentWandIndex;
     public WandController currentWand;
 
-    [SerializeField] CharacterController controller;
+    [SerializeField] Rigidbody rigidBody;
     [SerializeField] float moveSpeed = 4f;
 
     private void Start()
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         SwitchWand();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
         moveDir = Vector3.Normalize(moveDir);
 
-        controller.Move(moveDir * Time.deltaTime * moveSpeed);
+        rigidBody.MovePosition(transform.position + moveDir * Time.deltaTime * moveSpeed);
 
         // Yandere dev ahh code :sob:
         if (Input.GetKeyDown(KeyCode.Alpha1))

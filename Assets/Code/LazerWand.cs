@@ -27,6 +27,7 @@ public class LazerWand : WandController
         if (Input.GetMouseButtonUp(0))
         {
             lazerRenderer.enabled = false;
+            targetedEnemy = null;
             firePoint2.gameObject.SetActive(false);
         }
 
