@@ -33,7 +33,7 @@ public class EnemyScript : MonoBehaviour
     }
     Vector3 enemyToPlayer;
 
-    private void Update()
+    public virtual void Update()
     {
         // locks the rotation so that the sprite doesn't fuck up :)
         transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);

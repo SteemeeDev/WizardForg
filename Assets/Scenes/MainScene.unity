@@ -129,12 +129,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1146931155}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &376701695 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6815055587246855902, guid: d648e7006584e6149ae4b7de30aced4c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1613654196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,11 +1223,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1162252868728945528, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1660670950336660840, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: playerCam
@@ -1244,11 +1233,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1173410079}
-    - target: {fileID: 1882492081566819748, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: deathScreen
-      value: 
-      objectReference: {fileID: 376701695}
     - target: {fileID: 2892760929318302953, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: playerCam
@@ -1303,26 +1287,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785776946976983561, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581560513793857958, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581560513793857958, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5581560513793857958, guid: 271dd8ad7732d5a4ab411217d35ae198,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7415175982667613115, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}

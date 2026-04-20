@@ -12,11 +12,6 @@ public class ProjectileSlingingEnemy : EnemyScript
     {
         while (true)
         {
-            if ((transform.position-playerPosition.position).magnitude < 5f)
-            {
-                inPosition = true;
-            }
-
             if (inPosition)
             {
                 Debug.Log("THROWING ROCK");
@@ -38,6 +33,15 @@ public class ProjectileSlingingEnemy : EnemyScript
             }
 
             yield return new WaitForSeconds(3f);
+        }
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if ((transform.position - playerPosition.position).magnitude < 5f)
+        {
+            inPosition = true;
         }
     }
 }

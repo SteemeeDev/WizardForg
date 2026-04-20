@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     float timeSinceLastHit = 999f;
     float damageAnimationTime = 0.15f;
 
+    Color originalSpriteColor;
     public void TakeDamage(float damage)
     {
         timeSinceLastHit = 0;
@@ -32,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
     private float originalSpeed;
     private void Start()
     {
+        originalSpriteColor = enemyScript.spriteRenderer.color;
         originalSpeed = enemyScript.Agent.speed;
     }
 
@@ -45,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            enemyScript.spriteRenderer.color = Color.white;
+            enemyScript.spriteRenderer.color = originalSpriteColor;
             enemyScript.Agent.speed = originalSpeed;
         }
     }
