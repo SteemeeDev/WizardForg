@@ -20,6 +20,7 @@ public class ProjectileSlingingEnemy : EnemyScript
                 proj.transform.position = transform.position;
                 Rigidbody rb = proj.GetComponent<Rigidbody>();
                 rb.velocity = (playerPosition.position - transform.position).normalized * 10f;
+                rb.angularVelocity = new Vector3(0, 0, 10f);
                 Agent.SetDestination(transform.position);
 
                 yield return new WaitForSeconds(1f);
