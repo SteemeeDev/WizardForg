@@ -40,9 +40,12 @@ public class ProjectileSlingingEnemy : EnemyScript
     public override void Update()
     {
         base.Update();
-        if ((transform.position - playerPosition.position).magnitude < 5f)
+        if (playerPosition != null)
         {
-            inPosition = true;
+            if ((transform.position - playerPosition.position).magnitude < 5f)
+            {
+                inPosition = true;
+            }
         }
     }
 }
