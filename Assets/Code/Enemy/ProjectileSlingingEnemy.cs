@@ -8,6 +8,11 @@ public class ProjectileSlingingEnemy : EnemyScript
     [SerializeField] GameObject projectile;
     bool inPosition = false;
 
+
+    private void OnEnable()
+    {
+        Agent.SetDestination(playerPosition.position);
+    }
     public override IEnumerator EnemyPathFinding()
     {
         while (true)
