@@ -88,5 +88,10 @@ public class EnemyScript : MonoBehaviour
         }
 
     }
-    
+
+    private void OnDestroy()
+    {
+        Agent.enabled = false;
+    }
+
 }
