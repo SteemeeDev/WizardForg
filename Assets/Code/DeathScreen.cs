@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DeathScreen : MonoBehaviour
 {
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject player;
 
     public void retry()
     {
@@ -20,5 +21,10 @@ public class DeathScreen : MonoBehaviour
     public void ShowDeathScreen()
     {
         deathScreen.SetActive(true);
+    }
+
+    public void RemovePlayerForDebugPurposes() 
+    {
+        player.SetActive(false);
     }
 }

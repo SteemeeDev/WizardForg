@@ -26,12 +26,12 @@ public class EnemyScript : MonoBehaviour
     {
         Agent = GetComponent<NavMeshAgent>();
     }
-    private IEnumerator Start()
+    private void OnEnable()
     {
-        yield return new WaitForSeconds(2f);
         playerPosition = PlayerController.Instance.transform;
         StartCoroutine(EnemyPathFinding());
     }
+    
     Vector3 enemyToPlayer;
 
     public virtual void Update()
