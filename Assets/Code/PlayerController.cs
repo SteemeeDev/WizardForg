@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour
             currentWandIndex = 1;
             SwitchWand();
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWandIndex = 2;
+            SwitchWand();
+        }
     }
 
     void SwitchWand()
