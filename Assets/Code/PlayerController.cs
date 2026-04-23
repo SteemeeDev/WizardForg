@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
         moveDir = Vector3.Normalize(moveDir);
 
+        
+
         rigidBody.MovePosition(transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
     }
 

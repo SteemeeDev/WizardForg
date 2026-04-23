@@ -15,7 +15,7 @@ public class DeathScreen : MonoBehaviour
 
     public void QuitToMain()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ShowDeathScreen()

@@ -5977,6 +5977,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6925,23 +6930,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c4de61e711f714e8da3d5021d89d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyArray:
-  - {fileID: 66072246}
-  - {fileID: 641942992}
-  - {fileID: 1199963549}
-  - {fileID: 433402739}
-  - {fileID: 821140100}
+  enemyArray1:
+  - {fileID: 1540241300}
+  - {fileID: 1310093518}
   - {fileID: 577097038}
   - {fileID: 1629928433}
+  - {fileID: 821140100}
+  - {fileID: 918536586}
+  - {fileID: 657346747}
+  - {fileID: 641942992}
+  enemyArray2:
+  - {fileID: 66072246}
+  - {fileID: 1199963549}
+  - {fileID: 433402739}
   - {fileID: 979220148}
   - {fileID: 1351012090}
   - {fileID: 1612414004}
-  - {fileID: 918536586}
-  - {fileID: 1604015656}
   - {fileID: 1967365565}
-  - {fileID: 657346747}
-  - {fileID: 1310093518}
-  - {fileID: 1540241300}
+  - {fileID: 1604015656}
   - {fileID: 760212995}
   - {fileID: 586603786}
 --- !u!65 &653269239
@@ -6994,6 +7000,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8064,6 +8075,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12501,6 +12517,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14826,6 +14847,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15336,6 +15362,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17379,6 +17410,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7597480866256785262, guid: 271dd8ad7732d5a4ab411217d35ae198,
+        type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 1509050661}
     - target: {fileID: 8263654855484776078, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: playerCam
@@ -18688,6 +18724,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 754426588}
     m_Modifications:
+    - target: {fileID: 3917800705358475302, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4823888466231858431, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_LocalPosition.x
