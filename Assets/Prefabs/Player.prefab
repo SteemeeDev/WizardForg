@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2595515850980241185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215480540072989565}
+  - component: {fileID: 7597480866256785262}
+  m_Layer: 0
+  m_Name: StarRod
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215480540072989565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595515850980241185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 0.64599967, y: 0.22878933, z: -0.3230003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7505640840838221642}
+  m_Father: {fileID: 4539530845311862190}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7597480866256785262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595515850980241185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193ed61a4be993d4bb4687525f52c8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 5407998849085719522}
+  projectile: {fileID: 6811396048851116315, guid: c50dd3d3232b9df48b5e16a1482fbf2b,
+    type: 3}
+  playerAnimator: {fileID: 3529760224825020680}
+  playerRenderer: {fileID: 1347481021253274660}
+  firePos: {fileID: 4934962268898758295}
+  distFromPlayer: 0.3
+  atan2: 0
+  rot: 0
+  playerCam: {fileID: 0}
+  wandToPlayer: {x: 0, y: 0, z: 0}
+  playerLook: {x: 0, y: 0, z: 0}
 --- !u!1 &3181215056346940166
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,14 +67,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7505640840838221642}
   - component: {fileID: 172299344660178222}
-  - component: {fileID: 8263654855484776078}
   m_Layer: 0
   m_Name: WizardRod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7505640840838221642
 Transform:
   m_ObjectHideFlags: 0
@@ -26,13 +82,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3181215056346940166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2659617, y: 0.42339623, z: -0.332811, w: 0.79952294}
-  m_LocalPosition: {x: 0.89999986, y: 0.5879998, z: -0.069000125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5080004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 4539530845311862190}
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: -25.729}
+  m_Father: {fileID: 215480540072989565}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!212 &172299344660178222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,30 +141,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8263654855484776078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3181215056346940166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193ed61a4be993d4bb4687525f52c8c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  projectile: {fileID: 6811396048851116315, guid: 7e5748b65aed1fd4e90a5f50ec91f502,
-    type: 3}
-  playerAnimator: {fileID: 3529760224825020680}
-  playerRenderer: {fileID: 1347481021253274660}
-  firePos: {fileID: 0}
-  distFromPlayer: 1
-  atan2: 0
-  rot: 0
-  playerCam: {fileID: 0}
-  wandToPlayer: {x: 0, y: 0, z: 0}
-  playerLook: {x: 0, y: 0, z: 0}
 --- !u!1 &3321583474858630992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5136,6 +5168,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &5400863786999742449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4934962268898758295}
+  m_Layer: 8
+  m_Name: StarSpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4934962268898758295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400863786999742449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 17.28, y: 7.08, z: -7.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3779552271195023728}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!1 &6412486426553960902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,7 +5228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7505640840838221642}
+  - {fileID: 215480540072989565}
   - {fileID: 1346632879617870986}
   - {fileID: 2147333410404946717}
   m_Father: {fileID: 3779552271195023728}
@@ -5208,6 +5271,7 @@ Transform:
   - {fileID: 4539530845311862190}
   - {fileID: 5599054305755309005}
   - {fileID: 9095841130016313500}
+  - {fileID: 4934962268898758295}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7293220308254674629
@@ -5223,10 +5287,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wands:
+  - {fileID: 7597480866256785262}
   - {fileID: 1660670950336660840}
   - {fileID: 2892760929318302953}
   currentWandIndex: 0
-  currentWand: {fileID: 1660670950336660840}
+  currentWand: {fileID: 7597480866256785262}
   rigidBody: {fileID: 5581560513793857958}
   moveSpeed: 4
 --- !u!114 &1882492081566819748
@@ -5246,6 +5311,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 3529760224825020680}
   iFrames: 0.5
   healthBar: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!65 &6226564305540879953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5364,7 +5430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1346632879617870986
 Transform:
   m_ObjectHideFlags: 0

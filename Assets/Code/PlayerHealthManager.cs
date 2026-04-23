@@ -9,6 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] Animator playerAnimator;
     [SerializeField] float iFrames = 0.5f;
     [SerializeField] GameObject healthBar;
+    [SerializeField] GameObject deathScreen;
     
 
     bool canTakeDamage = true;
@@ -21,7 +22,8 @@ public class PlayerHealthManager : MonoBehaviour
             health -= damage;
             StartCoroutine(InvincibilityFrames());
         }
-        else if (health <= 0 && !playerIsDead)
+
+        if (health <= 0 && !playerIsDead)
         {
             playerIsDead = true;
 
@@ -43,6 +45,7 @@ public class PlayerHealthManager : MonoBehaviour
 
             playerAnimator.SetTrigger("Die");
 
+
         }
     }
 
@@ -60,4 +63,6 @@ public class PlayerHealthManager : MonoBehaviour
         yield return new WaitForSeconds(iFrames);
         canTakeDamage = true;
     }
+    
+
 }

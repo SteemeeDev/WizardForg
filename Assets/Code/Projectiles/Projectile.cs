@@ -9,10 +9,6 @@ public class Projectile : MonoBehaviour
     public float lifetime = 5f;
     public float timeAlive = 0f;
     public float travelSpeed;
-    public virtual void Update()
-    {
-
-    }
     public virtual IEnumerator FireProjectile(WandController controller, Transform startPos)
     {
         yield return null;

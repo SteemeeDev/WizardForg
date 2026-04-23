@@ -17,10 +17,6 @@ public class BubbleProjectile : Projectile
 
 
     List<GameObject> hitEnemies = new List<GameObject>();
-    public override void Update()
-    {
-        base.Update();
-    }
 
     Vector3 travelDir = Vector3.zero;
     public override IEnumerator FireProjectile(WandController controller, Transform startPos)
