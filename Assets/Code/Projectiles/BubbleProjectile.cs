@@ -7,6 +7,7 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 public class BubbleProjectile : Projectile
 {
+    [SerializeField] Animator _animator;
     public float chargeUpTime = 2f;
     public float charge = 0f;
 
@@ -105,7 +106,18 @@ public class BubbleProjectile : Projectile
 
         if (collision.gameObject.CompareTag("Environment"))
         {
-            Destroy(gameObject);
+            _rigidBody.velocity = Vector3.zero;
+            _rigidBody.isKinematic = true;
+            _animator.SetTrigger("KillBubble");
+
+            StartCoroutine(IEDestroyObject());
         }
+    }
+
+    // Called by animationevent on _animator
+    public IEnumerator IEDestroyObject()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }

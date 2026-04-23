@@ -25,7 +25,7 @@ public class StarProjectile : Projectile
     public override IEnumerator FireProjectile(WandController controller, Transform startPos)
     {
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, groundLayer)){
+        if(Physics.Raycast(controller.playerCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, groundLayer)){
             targetPos = hit.point;
         }
         float elapsed = 0;
