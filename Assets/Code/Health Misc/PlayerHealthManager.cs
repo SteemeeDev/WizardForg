@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthManager : MonoBehaviour
 {
     public int health = 10;
+    public int maxHealth = 10;
     [SerializeField] WandController wandController;
     [SerializeField] Animator playerAnimator;
     [SerializeField] float iFrames = 0.5f;
@@ -21,6 +22,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             health -= damage;
             StartCoroutine(InvincibilityFrames());
+            healthBar.GetComponent<PlayerHealthBar>().UpdateHealth();
         }
 
         if (health <= 0 && !playerIsDead)
@@ -44,9 +46,14 @@ public class PlayerHealthManager : MonoBehaviour
 
 
             playerAnimator.SetTrigger("Die");
-
-
         }
+    }
+
+    // Not used as of now
+    public void HealPlayer(int amount)
+    {
+        health += amount;
+        health = Mathf.Clamp(health, 0, maxHealth);
     }
 
     public void Update()
