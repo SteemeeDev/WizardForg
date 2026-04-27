@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 215480540072989565}
-  - component: {fileID: 7597480866256785262}
+  - component: {fileID: 9131165709027105124}
   m_Layer: 0
   m_Name: StarRod
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 7505640840838221642}
   m_Father: {fileID: 4539530845311862190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7597480866256785262
+--- !u!114 &9131165709027105124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2595515850980241185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 193ed61a4be993d4bb4687525f52c8c6, type: 3}
+  m_Script: {fileID: 11500000, guid: e2a90ebd186ac7b408cb2327d1e4800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 5407998849085719522}
@@ -57,6 +57,7 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   wandToPlayer: {x: 0, y: 0, z: 0}
   playerLook: {x: 0, y: 0, z: 0}
+  firePos2: {fileID: 776065024096393666}
 --- !u!1 &3181215056346940166
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,7 +5179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934962268898758295}
   m_Layer: 8
-  m_Name: StarSpawnPos
+  m_Name: StarSpawnPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5193,7 +5194,7 @@ Transform:
   m_GameObject: {fileID: 5400863786999742449}
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 17.28, y: 7.08, z: -7.28}
+  m_LocalPosition: {x: -4.58, y: 4.69, z: 11.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5272,6 +5273,7 @@ Transform:
   - {fileID: 5599054305755309005}
   - {fileID: 9095841130016313500}
   - {fileID: 4934962268898758295}
+  - {fileID: 776065024096393666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7293220308254674629
@@ -5287,11 +5289,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wands:
-  - {fileID: 7597480866256785262}
+  - {fileID: 0}
   - {fileID: 1660670950336660840}
   - {fileID: 2892760929318302953}
   currentWandIndex: 0
-  currentWand: {fileID: 7597480866256785262}
+  currentWand: {fileID: 0}
   rigidBody: {fileID: 5581560513793857958}
   moveSpeed: 4
 --- !u!114 &1882492081566819748
@@ -5471,6 +5473,37 @@ MonoBehaviour:
   playerCam: {fileID: 0}
   wandToPlayer: {x: 0, y: 0, z: 0}
   playerLook: {x: 0, y: 0, z: 0}
+--- !u!1 &8484433991222823410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 776065024096393666}
+  m_Layer: 8
+  m_Name: StarSpawnPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &776065024096393666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484433991222823410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 10.13, y: 4.69, z: -3.49}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3779552271195023728}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!1 &8509084834411486012
 GameObject:
   m_ObjectHideFlags: 0

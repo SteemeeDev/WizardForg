@@ -3,7 +3,7 @@ using UnityEngine;
 public class WandController : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
-    [SerializeField] GameObject projectile;
+    public GameObject projectile;
     [SerializeField] Animator playerAnimator;
     [SerializeField] SpriteRenderer playerRenderer;
     public Transform firePos;

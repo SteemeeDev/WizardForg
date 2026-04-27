@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class StarProjectile : Projectile
 {
+    Vector3 startingPos;
     Vector3 targetPos;
     LayerMask groundLayer;
     private void Awake()
@@ -31,11 +32,15 @@ public class StarProjectile : Projectile
         float elapsed = 0;
         float animTime = 2f;
 
+        startingPos = transform.position;
+
         while (elapsed < animTime)
         {
+            Debug.DrawLine(startPos.position, targetPos, Color.red);
             elapsed += Time.deltaTime;
 
-            _rigidBody.MovePosition(Vector3.Lerp(startPos.position, targetPos, elapsed / animTime));
+           // _rigidBody.MovePosition(Vector3.Lerp(startPos.position, targetPos, elapsed / animTime));
+            transform.position = Vector3.Lerp(startingPos, targetPos, elapsed / animTime);
             _rigidBody.angularVelocity = new Vector3(0, 0, 10f);
 
             yield return null;
