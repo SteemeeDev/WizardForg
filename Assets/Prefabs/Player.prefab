@@ -5333,7 +5333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  maxHealth: 10
+  maxHealth: 5
   wandController: {fileID: 2892760929318302953}
   playerAnimator: {fileID: 3529760224825020680}
   iFrames: 0.5

@@ -19,6 +19,10 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void UpdateHealth()
     {
+        foreach (Heart ha in hearts)
+        {
+            Destroy(ha.gameObject);
+        }
         hearts.Clear();
         for (int i = 0; i < healthManager.maxHealth; i++)
         {
