@@ -177,8 +177,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278252031
+  m_fontColor: {r: 1, g: 0.9452766, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -315,3 +315,5 @@ MonoBehaviour:
   damageAmount: 7.4422708
   lifeTime: 1
   fallSpeed: 3
+  maxDamageColor: {r: 1, g: 0, b: 0, a: 1}
+  mediumDamageColor: {r: 1, g: 0.94509804, b: 0, a: 1}
