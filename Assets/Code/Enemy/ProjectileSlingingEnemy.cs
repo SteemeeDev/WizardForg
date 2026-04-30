@@ -12,6 +12,12 @@ public class ProjectileSlingingEnemy : EnemyScript
     {
         while (true)
         {
+            if (playerPosition == null)
+            {
+                playerPosition = PlayerController.Instance.transform;
+                yield return null;
+                continue;
+            }
             if (inPosition)
             {
                 Debug.Log("THROWING ROCK");

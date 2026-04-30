@@ -36,6 +36,10 @@ public class EnemyScript : MonoBehaviour
 
     public virtual void Update()
     {
+        if (playerPosition == null)
+        {
+            playerPosition = PlayerController.Instance.transform;
+        }
         // locks the rotation so that the sprite doesn't fuck up :)
         transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);
 
@@ -65,7 +69,7 @@ public class EnemyScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.3f);
-            if (playerIsTarget) Agent.SetDestination(playerPosition.position);
+            if (playerIsTarget && playerPosition != null) Agent.SetDestination(playerPosition.position);
         }
     }
 

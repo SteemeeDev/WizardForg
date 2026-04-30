@@ -7,7 +7,7 @@ ScriptedImporter:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: HeartFrog Copy_Clip
-    second: {fileID: 7400000, guid: 5c5317bcf052e004bb0691fbab604d3e, type: 2}
+    second: {fileID: 7400000, guid: 7273b19ae0d2b9d4ab2966b47fdf54f7, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -100,7 +100,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639089199095165921
+  platformSettingsDirtyTick: 639131433504648188
   textureAssetName: 
   singleSpriteImportData:
   - name: 

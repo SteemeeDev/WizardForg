@@ -54,6 +54,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         health += amount;
         health = Mathf.Clamp(health, 0, maxHealth);
+        healthBar.GetComponent<PlayerHealthBar>().UpdateHealth();
     }
 
     public void Update()
