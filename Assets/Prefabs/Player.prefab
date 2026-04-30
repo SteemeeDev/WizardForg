@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7254069268816184296}
   - component: {fileID: 5652394980030428183}
+  - component: {fileID: 707253794938394152}
   m_Layer: 13
   m_Name: LazerRenderer
   m_TagString: Untagged
@@ -280,8 +281,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 9.02, z: 0}
-  - {x: 0, y: 1.146, z: 0}
+  - {x: 6.443125, y: -5.6033273, z: -3.660425}
+  - {x: 7.489109, y: -4.903433, z: -3.7166092}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -290,7 +291,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.16822433
+        value: 0.471447
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -333,7 +334,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
@@ -341,6 +342,29 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &707253794938394152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624976113454130653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9872942e0f44d45bc0a53f273df538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -4497797313287776507, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 2009572775105534061, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 1219446118193422538, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 1684189228667454320, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 880863220702806994, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 7224682327649237919, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 1920636251062351087, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: -3058914616498801131, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  - {fileID: 6947628748110244284, guid: a973886f94286f54d8612501f71c7598, type: 3}
+  fps: 12
 --- !u!1 &5127472902431086402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5289,11 +5313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wands:
-  - {fileID: 0}
+  - {fileID: 9131165709027105124}
   - {fileID: 1660670950336660840}
   - {fileID: 2892760929318302953}
   currentWandIndex: 0
-  currentWand: {fileID: 0}
+  currentWand: {fileID: 9131165709027105124}
   rigidBody: {fileID: 5581560513793857958}
   moveSpeed: 4
 --- !u!114 &1882492081566819748
@@ -5309,6 +5333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  maxHealth: 10
   wandController: {fileID: 2892760929318302953}
   playerAnimator: {fileID: 3529760224825020680}
   iFrames: 0.5
@@ -5858,7 +5883,7 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}
       propertyPath: m_Name
-      value: FireWand
+      value: LazerWand
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}
@@ -5874,13 +5899,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: -5171310380843632309, guid: 6d36ccc864b13824a8053f8980c091aa,
+      objectReference: {fileID: 9100000, guid: 186c48aaea8ef3e439f4f2ffac830907, type: 2}
+    - target: {fileID: 3626916397498700004, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: ca235c29f4490b74f8dd1c1832ce9497,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.16
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5590887003674274676, guid: 6d36ccc864b13824a8053f8980c091aa,
+      objectReference: {fileID: 7400955284717312234, guid: 6d36ccc864b13824a8053f8980c091aa,
         type: 3}
     - target: {fileID: 7878350319992209165, guid: ca235c29f4490b74f8dd1c1832ce9497,
         type: 3}
