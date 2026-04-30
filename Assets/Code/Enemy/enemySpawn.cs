@@ -42,25 +42,34 @@ public class enemySpawn : MonoBehaviour
 
     private void WinScreen()
     {
+        bool isArray1Empty = true;
+        bool isArray2Empty = true;
+
         // I love looping through arrays :D
         for (int i = 0; i < enemyArray1.Length; i++)
         {
-            if (enemyArray1[i] == null)
+            if (enemyArray1[i] != null)
             {
-                for(int j = 0;  j < enemyArray2.Length; j++)
-                {
-                    if (enemyArray2[j] == null)
-                    {
-                        winScreen.SetActive(true);
-                        Time.timeScale = 0;
-
-                        
-                    }
-                }
-
+                isArray1Empty = false;
+                break;
             }
         }
         
+        for (int i = 0;i < enemyArray2.Length;i++)
+        {
+            if (enemyArray2[i] != null)
+            {
+                isArray2Empty = false;
+                break;
+            }
+                     
+        }
+        
+        if (isArray1Empty && isArray2Empty)
+        {
+            winScreen.SetActive(true);
+        }
+
     }
 
 
