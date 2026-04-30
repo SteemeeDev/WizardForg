@@ -12,11 +12,19 @@ public class DamageNumber : MonoBehaviour
     [SerializeField] float lifeTime = 3f;
     [SerializeField] float fallSpeed = 3f;
 
+    [SerializeField] Color maxDamageColor;
+    [SerializeField] Color mediumDamageColor;
+
 
     float timeAlive;
     public void SpawnObject(Vector3 spawnPos)
     {
         damageText.text = ((int)damageAmount).ToString();
+
+        if (damageAmount > 35f) damageText.color = maxDamageColor;
+        else if (damageAmount > 15f) damageText.color = mediumDamageColor;
+        else damageText.color = Color.white;
+
         transform.position = spawnPos;
 
         rb.velocity = new Vector3(Random.Range(-3f, 3f), 2, Random.Range(-3f, 3f));

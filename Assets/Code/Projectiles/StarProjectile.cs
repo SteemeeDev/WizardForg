@@ -46,6 +46,11 @@ public class StarProjectile : Projectile
             yield return null;
         }
 
+        CameraShake.Instance.StartCoroutine(CameraShake.Instance.IEShakeCamera(0.3f, 0.3f));
+
+        _rigidBody.angularVelocity = Vector3.zero;
+        yield return new WaitForSeconds(0.3f);
+
         Destroy(gameObject);
     }
 }
