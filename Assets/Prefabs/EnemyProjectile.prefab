@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3103500810121742544}
   - component: {fileID: 6921788247492492251}
   m_Layer: 10
-  m_Name: GameObject
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801591724560582049}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000052154064, y: -0, z: -0.1902194, w: 0.9817416}
-  m_LocalPosition: {x: -0.19867453, y: -0.30737978, z: 0.0000005364418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.005, y: -0.321, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4151801267705548423}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -21.931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3103500810121742544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,8 +96,7 @@ Animator:
   m_GameObject: {fileID: 2801591724560582049}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 4965064863675144398, guid: 91e9516f2c72bbf44b715387041419ac,
-    type: 3}
+  m_Controller: {fileID: 9100000, guid: f8f9984ca077bd94b96d232d8852e872, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -119,8 +118,8 @@ GameObject:
   - component: {fileID: 4151801267705548423}
   - component: {fileID: 5707257288259571732}
   - component: {fileID: 9079597294667774385}
-  - component: {fileID: 8962504204392737656}
   - component: {fileID: 3556931178082222097}
+  - component: {fileID: 5376223546023209158}
   m_Layer: 10
   m_Name: EnemyProjectile
   m_TagString: Untagged
@@ -157,7 +156,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 15671
+    m_Bits: 30519
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -192,27 +191,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 52
   m_CollisionDetection: 1
---- !u!135 &8962504204392737656
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811396048851116315}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 30263
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3556931178082222097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +207,27 @@ MonoBehaviour:
   lifetime: 5
   timeAlive: 0
   travelSpeed: 0
+  fireAnimator: {fileID: 6921788247492492251}
+--- !u!136 &5376223546023209158
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811396048851116315}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 32311
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1.3051845
+  m_Direction: 1
+  m_Center: {x: -0.00000062593756, y: -0.15258586, z: 0.0000010188936}

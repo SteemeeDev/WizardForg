@@ -127,8 +127,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 382758711274514278, guid: d82c505bcf230fd4ba056b6cf7d57e22, type: 3}
-  m_Color: {r: 0.05134535, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -8476350301841933441, guid: 8e9b40c8490155f48b8b12f088bab2ed,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,7 +149,7 @@ Animator:
   m_GameObject: {fileID: 4223091383374369736}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e38dec9ebe17374fbd6deea6019f717, type: 2}
+  m_Controller: {fileID: 9100000, guid: 39d7e4b773e27eb4abbcfaec93b3f425, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -277,6 +278,7 @@ MonoBehaviour:
   playerPosition: {fileID: 0}
   Agent: {fileID: 6059548786737521103}
   targetPos: {x: 0, y: 0, z: 0}
+  enemyToPlayer: {x: 0, y: 0, z: 0}
   projectile: {fileID: 6811396048851116315, guid: 367518c9ae5466d4f902f14f5235c11a,
     type: 3}
 --- !u!1 &6684463185863449833

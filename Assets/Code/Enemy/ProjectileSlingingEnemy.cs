@@ -38,7 +38,7 @@ public class ProjectileSlingingEnemy : EnemyScript
                 enemyLook = enemyLook.normalized;
 
                 float atan2 = Mathf.Atan2(enemyLook.y, enemyLook.x);
-                proj.transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 100f);
+                proj.transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 90f);
 
                 Agent.SetDestination(transform.position);
 
