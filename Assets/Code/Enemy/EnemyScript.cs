@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
         StartCoroutine(EnemyPathFinding());
     }
     
-    Vector3 enemyToPlayer;
+    public Vector3 enemyToPlayer;
 
     public virtual void Update()
     {

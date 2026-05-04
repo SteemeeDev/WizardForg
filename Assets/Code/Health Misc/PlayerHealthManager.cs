@@ -14,7 +14,7 @@ public class PlayerHealthManager : MonoBehaviour
     
 
     bool canTakeDamage = true;
-    bool playerIsDead = false;
+    public bool playerIsDead = false;
 
     public void TakeDamage(int damage)
     {
@@ -44,6 +44,7 @@ public class PlayerHealthManager : MonoBehaviour
             plrController.enabled = false;
             plrController.currentWand.gameObject.SetActive(false);
 
+            
 
             playerAnimator.SetTrigger("Die");
         }
