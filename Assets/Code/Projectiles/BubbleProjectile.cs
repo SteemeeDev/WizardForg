@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
 
 public class BubbleProjectile : Projectile
 {
@@ -16,11 +13,12 @@ public class BubbleProjectile : Projectile
     // Debounce variable that triggers the onShoot
     bool onFired = false;
 
+    ChargeUpBar _chargeUpBar;
 
     List<GameObject> hitEnemies = new List<GameObject>();
 
     Vector3 travelDir = Vector3.zero;
-    public override IEnumerator FireProjectile(WandController controller, Transform startPos)
+    public IEnumerator FireBubble(WandController controller, Transform startPos, ChargeUpBar chargeUpBar)
     {
         while (timeAlive < lifetime)
         {
@@ -42,6 +40,8 @@ public class BubbleProjectile : Projectile
 
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
+                _chargeUpBar = chargeUpBar;
+                chargeUpBar.UpdateBar((charge / chargeUpTime) * chargeUpBar.maxCharge);
 
                 travelDir = Quaternion.Euler(0,45,0) * -new Vector3(controller.playerLook.x, 0, controller.playerLook.y);
                 travelDir = travelDir.normalized;
@@ -70,7 +70,8 @@ public class BubbleProjectile : Projectile
     // We do an extra check for enemys when firing since, if the bubble is created inside an enemy, it wont trigger the OnTriggerEnter and thus wont deal damage
     void OnFireWand()
     {
-       // Debug.Log("Fired bubble awnd");
+        _chargeUpBar.UpdateBar(0f);
+        // Debug.Log("Fired bubble awnd");
         Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
         foreach (Collider hit in hits)
         {
@@ -81,6 +82,7 @@ public class BubbleProjectile : Projectile
 
                 charge -= 0.5f;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
+
                 travelSpeed *= 0.8f;
 
                 if (charge < 0.1f) Destroy(gameObject);

@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.LowLevel;
 
 public class ProjectileSlingingEnemy : EnemyScript
 {
+    Camera mainCamera;
     [SerializeField] GameObject projectile;
     bool inPosition = false;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+    }
 
     public override IEnumerator EnemyPathFinding()
     {
@@ -26,7 +33,13 @@ public class ProjectileSlingingEnemy : EnemyScript
                 proj.transform.position = transform.position;
                 Rigidbody rb = proj.GetComponent<Rigidbody>();
                 rb.velocity = (playerPosition.position - transform.position).normalized * 10f;
-                rb.angularVelocity = new Vector3(0, 0, 10f);
+
+                Vector3 enemyLook = mainCamera.WorldToScreenPoint(playerPosition.position) - mainCamera.WorldToScreenPoint(transform.position);
+                enemyLook = enemyLook.normalized;
+
+                float atan2 = Mathf.Atan2(enemyLook.y, enemyLook.x);
+                proj.transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 100f);
+
                 Agent.SetDestination(transform.position);
 
                 yield return new WaitForSeconds(1f);
