@@ -8,9 +8,10 @@ public class enemySpawn : MonoBehaviour
 
     [SerializeField] GameObject[] enemyArray1;
     [SerializeField] GameObject[] enemyArray2;
-
+    
     [SerializeField] GameObject winScreen;
 
+    [SerializeField] PlayerHealthManager playerHealthManager;
     private void Start()
     {
         foreach (GameObject go in enemyArray1)
@@ -65,7 +66,7 @@ public class enemySpawn : MonoBehaviour
                      
         }
         
-        if (isArray1Empty && isArray2Empty)
+        if (isArray1Empty && isArray2Empty && playerHealthManager.playerIsDead == false)
         {
             winScreen.SetActive(true);
         }
