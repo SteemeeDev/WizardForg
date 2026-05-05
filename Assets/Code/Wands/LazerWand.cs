@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 
@@ -16,25 +17,58 @@ public class LazerWand : WandController
 
     int layerMask;
 
+    bool firingLazer = false;
+    public bool overCharged;
+    public float lazerCharge = 0;
+    public float maxLazerCharge = 100f;
+
+    public float chargeUpTime;
+    public float chargeDownTime;
+
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        DisableLazer();
+    }
+
     private void Start()
     { 
         layerMask = (1 << LayerMask.NameToLayer("3dEnvironment")) | (1 << LayerMask.NameToLayer("Enemy"));
     }
 
+    float elapsed = 0;
     public override void Update()
     {
         base.Update();
         if (Input.GetMouseButtonUp(0))
         {
-            lazerRenderer.enabled = false;
-            targetedEnemy = null;
-            firePoint2.gameObject.SetActive(false);
+            DisableLazer();
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !overCharged)
         {
-            FireWand();
+            firingLazer = true;
+            lazerCharge += Time.deltaTime * chargeUpTime;
+            lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
+            if (lazerCharge < maxLazerCharge)
+            {
+                FireWand();
+            }
+            else
+            {
+                overCharged = true;
+                wandManager.lazerOvercharge = wandManager.StartCoroutine(wandManager.IEOverchargeLazer(elapsed));
+                DisableLazer();
+            }
         }
+
+        if (!firingLazer && !overCharged)
+        {
+            lazerCharge -= Time.deltaTime * chargeDownTime;
+            lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
+        }
+
+        chargeUpBar.UpdateBar(lazerCharge);
 
         timeSinceLastTick += Time.deltaTime;
         if (timeSinceLastTick >= 1f / ticksPerSecond)
@@ -49,6 +83,7 @@ public class LazerWand : WandController
 
     public override void FireWand()
     {
+        if (overCharged) return;
         lazerRenderer.enabled = true;
         lazerRenderer.SetPosition(0, firePos.position);
 
@@ -108,5 +143,14 @@ public class LazerWand : WandController
             lazerRenderer.SetPosition(1, firepos2);
         }
 
+    }
+
+
+    void DisableLazer()
+    {
+        lazerRenderer.enabled = false;
+        targetedEnemy = null;
+        firePoint2.gameObject.SetActive(false);
+        firingLazer = false;
     }
 }

@@ -42,7 +42,7 @@ public class PlayerHealthManager : MonoBehaviour
             //disables player movement and wand
             PlayerController plrController = GetComponent<PlayerController>();
             plrController.enabled = false;
-            plrController.currentWand.gameObject.SetActive(false);
+            plrController.wandManager.currentWand.gameObject.SetActive(false);
 
             
 

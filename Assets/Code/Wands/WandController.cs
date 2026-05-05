@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class WandController : MonoBehaviour
 {
+    [SerializeField] public WandManager wandManager;
     [SerializeField] Transform playerTransform;
-    public GameObject projectile;
     [SerializeField] Animator playerAnimator;
     [SerializeField] SpriteRenderer playerRenderer;
-    public Transform firePos;
     [SerializeField] float distFromPlayer = 1f;
+    public Transform firePos;
+    public GameObject projectile;
 
     public float atan2;
 
@@ -17,6 +18,24 @@ public class WandController : MonoBehaviour
 
     public Vector3 wandToPlayer;
     public Vector3 playerLook = Vector3.zero;
+
+    public ChargeUpBar chargeUpBar;
+
+    public virtual void OnEnable()
+    {
+        if (chargeUpBar != null)
+        {
+            chargeUpBar.transform.parent.gameObject.SetActive(true);
+        }
+    }
+
+    public virtual void OnDisable()
+    {
+        if (chargeUpBar != null)
+        {
+            chargeUpBar.transform.parent.gameObject.SetActive(false);
+        }
+    }
 
     public virtual void Update()
     {

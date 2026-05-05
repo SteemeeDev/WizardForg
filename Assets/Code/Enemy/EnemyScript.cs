@@ -26,9 +26,13 @@ public class EnemyScript : MonoBehaviour
     {
         Agent = GetComponent<NavMeshAgent>();
     }
-    private void OnEnable()
+    private void Start()
     {
         playerPosition = PlayerController.Instance.transform;
+    }
+    private void OnEnable()
+    {
+        if(PlayerController.Instance != null) playerPosition = PlayerController.Instance.transform;
         StartCoroutine(EnemyPathFinding());
     }
     
