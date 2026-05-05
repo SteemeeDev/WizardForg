@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6059548786737521103, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6160945229049647121, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_Name
@@ -195,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 6160945229049647121, guid: 1e411efbc09e0ab44a1473e8a3d653e7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -598,7 +603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003753887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -969,6 +974,11 @@ PrefabInstance:
       propertyPath: health
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 5048174164126498668, guid: 5eacfba7c3a1947408fb6265d6827353,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1221,6 +1231,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 296460526399255927}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1925128384 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8364391853815574116, guid: e8615c26dc4aa5d42aaa3eeca7ef1ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1146931155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &296460526399255927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1229,11 +1245,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1660670950336660840, guid: 271dd8ad7732d5a4ab411217d35ae198,
+    - target: {fileID: 243137168347610040, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: playerCam
       value: 
-      objectReference: {fileID: 131949574}
+      objectReference: {fileID: 1925128384}
     - target: {fileID: 1882492081566819748, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: healthBar
