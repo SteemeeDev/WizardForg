@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a90ebd186ac7b408cb2327d1e4800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wandManager: {fileID: 0}
+  wandManager: {fileID: 2891105219993933287}
   playerTransform: {fileID: 5407998849085719522}
   playerAnimator: {fileID: 3529760224825020680}
   playerRenderer: {fileID: 1347481021253274660}
@@ -405,13 +405,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7439561441090470135, guid: 6a9057b000a22b14f80e2273e231e4fa,
+  m_Sprite: {fileID: 8694744694214531468, guid: bdecd63eb4c093d4ba8faffd54fba8de,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.36, y: 0.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -427,7 +427,7 @@ Animator:
   m_GameObject: {fileID: 3181215056346940166}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -8776188280172937225, guid: 6a9057b000a22b14f80e2273e231e4fa,
+  m_Controller: {fileID: -5505124776957329417, guid: bdecd63eb4c093d4ba8faffd54fba8de,
     type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -5758,6 +5758,10 @@ MonoBehaviour:
   - {fileID: 243137168347610040}
   - {fileID: 2892760929318302953}
   - {fileID: 9131165709027105124}
+  UIWandAnimators:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentWandIndex: 0
   currentWand: {fileID: 243137168347610040}
 --- !u!1 &7415175982667613115
@@ -6627,6 +6631,7 @@ MonoBehaviour:
   lazerRenderer: {fileID: 5652394980030428183}
   maxLazerLength: 20
   firePoint2: {fileID: 7357141365824035923}
+  animator: {fileID: 6954455425040703960}
   damagePerTick: 10
   ticksPerSecond: 10
   overCharged: 0
@@ -6637,6 +6642,12 @@ MonoBehaviour:
 --- !u!4 &2147333410404946717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: ca235c29f4490b74f8dd1c1832ce9497,
+    type: 3}
+  m_PrefabInstance: {fileID: 8113614627066850320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6954455425040703960 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1160356261127867848, guid: ca235c29f4490b74f8dd1c1832ce9497,
     type: 3}
   m_PrefabInstance: {fileID: 8113614627066850320}
   m_PrefabAsset: {fileID: 0}
