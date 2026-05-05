@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class LazerWand : WandController
     [SerializeField] LineRenderer lazerRenderer;
     [SerializeField] float maxLazerLength = 20f;
     [SerializeField] Transform firePoint2;
+    [SerializeField] Animator animator;
     public float damagePerTick = 5f;
     public int ticksPerSecond = 10;
 
@@ -69,6 +71,8 @@ public class LazerWand : WandController
         }
 
         chargeUpBar.UpdateBar(lazerCharge);
+        if (!overCharged) animator.speed = 1f + (1 - Mathf.Pow(1 - lazerCharge/maxLazerCharge, 3)) * 4f;
+        else animator.speed = 1f;
 
         timeSinceLastTick += Time.deltaTime;
         if (timeSinceLastTick >= 1f / ticksPerSecond)
@@ -76,7 +80,7 @@ public class LazerWand : WandController
             timeSinceLastTick = 0f;
             if (targetedEnemy != null)
             {
-                targetedEnemy.TakeDamage(damagePerTick);
+                targetedEnemy.TakeDamage(1f + damagePerTick * Mathf.Pow(lazerCharge / maxLazerCharge, 1));
             }
         }
     }
