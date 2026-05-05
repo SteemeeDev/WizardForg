@@ -27,8 +27,6 @@ public class ProjectileSlingingEnemy : EnemyScript
             }
             if (inPosition)
             {
-                Debug.Log("THROWING ROCK");
-
                 GameObject proj = Instantiate(projectile);
                 proj.transform.position = transform.position;
                 Rigidbody rb = proj.GetComponent<Rigidbody>();

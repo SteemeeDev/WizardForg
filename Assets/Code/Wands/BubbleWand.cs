@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BubbleWand : WandController
 {
+    public AudioSource bubblePop;
     public override void FireWand()
     {
         GameObject proj = Instantiate(projectile);

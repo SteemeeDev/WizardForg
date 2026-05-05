@@ -14,12 +14,17 @@ public class BubbleProjectile : Projectile
     bool onFired = false;
 
     ChargeUpBar _chargeUpBar;
+    BubbleWand _wandController;
 
     List<GameObject> hitEnemies = new List<GameObject>();
 
     Vector3 travelDir = Vector3.zero;
     public IEnumerator FireBubble(WandController controller, Transform startPos, ChargeUpBar chargeUpBar)
     {
+        controller.StopAllCoroutines();
+        controller.StartCoroutine(controller.IEFadeAudio(2f, 1f, false));
+        _wandController = controller.gameObject.GetComponent<BubbleWand>();
+        _chargeUpBar = chargeUpBar;
         while (timeAlive < lifetime)
         {
             timeAlive += Time.deltaTime;
@@ -36,11 +41,9 @@ public class BubbleProjectile : Projectile
                     0,
                     -controller.wandToPlayer.z * 2
                 );
-                
 
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
-                _chargeUpBar = chargeUpBar;
                 chargeUpBar.UpdateBar((charge / chargeUpTime) * chargeUpBar.maxCharge);
 
                 travelDir = Quaternion.Euler(0,45,0) * -new Vector3(controller.playerLook.x, 0, controller.playerLook.y);
@@ -70,6 +73,9 @@ public class BubbleProjectile : Projectile
     // We do an extra check for enemys when firing since, if the bubble is created inside an enemy, it wont trigger the OnTriggerEnter and thus wont deal damage
     void OnFireWand()
     {
+        if (charge < 0.2f) Destroy(gameObject);
+        _wandController.StopAllCoroutines();
+        _wandController.StartCoroutine(_wandController.IEFadeAudio(0.1f, 0f, false));
         _chargeUpBar.UpdateBar(0f);
         // Debug.Log("Fired bubble awnd");
         Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
@@ -84,10 +90,9 @@ public class BubbleProjectile : Projectile
                 transform.localScale = Vector3.one * charge / chargeUpTime;
 
                 travelSpeed *= 0.8f;
-
-                if (charge < 0.1f) Destroy(gameObject);
             }
         }
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -96,12 +101,14 @@ public class BubbleProjectile : Projectile
         {
             if (hitEnemies.Contains(collision.gameObject)) return;
             else hitEnemies.Add(collision.gameObject);
-            Debug.Log("Hit enemy");
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
 
             charge -= 0.5f;
             transform.localScale = Vector3.one * charge / chargeUpTime;
             travelSpeed *= 0.8f;
+
+            _wandController.bubblePop.pitch = Random.Range(0.9f, 1.1f);
+            _wandController.bubblePop.PlayOneShot(_wandController.bubblePop.clip);
 
             if (charge < 0.1f) Destroy(gameObject);
         }
@@ -119,6 +126,7 @@ public class BubbleProjectile : Projectile
     // Called by animationevent on _animator
     public IEnumerator IEDestroyObject()
     {
+        _wandController.bubblePop.Play();
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }

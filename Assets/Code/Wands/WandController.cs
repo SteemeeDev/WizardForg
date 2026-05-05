@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class WandController : MonoBehaviour
@@ -7,6 +8,7 @@ public class WandController : MonoBehaviour
     [SerializeField] Animator playerAnimator;
     [SerializeField] SpriteRenderer playerRenderer;
     [SerializeField] float distFromPlayer = 1f;
+    public AudioSource wandAudioPlayer;
     public Transform firePos;
     public GameObject projectile;
 
@@ -87,4 +89,24 @@ public class WandController : MonoBehaviour
         playerAnimator.SetFloat("TurnDegrees", adjustedAtan);
     }
 
+
+    public IEnumerator IEFadeAudio(float fadeTime, float targetVolume, bool stopAudio)
+    {
+        Debug.Log($"FADING AUDIO TO {targetVolume}");
+        float elapsed = 0;
+        float startingVolume = wandAudioPlayer.volume;
+
+        while (elapsed < fadeTime)
+        {
+            elapsed += Time.deltaTime;
+
+            wandAudioPlayer.volume = Mathf.Lerp(startingVolume, targetVolume, elapsed / fadeTime);
+
+            yield return null;
+        }
+
+        wandAudioPlayer.volume = targetVolume;
+
+        if (stopAudio) wandAudioPlayer.Stop();
+    }
 }
