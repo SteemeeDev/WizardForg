@@ -83,7 +83,7 @@ public class BubbleProjectile : Projectile
         {
             if (hit.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Hit enemy");
+               // Debug.Log("Hit enemy");
                 hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
 
                 charge -= 0.5f;
@@ -104,13 +104,14 @@ public class BubbleProjectile : Projectile
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
 
             charge -= 0.5f;
+            if (charge <= 0.1f) Destroy(gameObject);
+
             transform.localScale = Vector3.one * charge / chargeUpTime;
             travelSpeed *= 0.8f;
 
             _wandController.bubblePop.pitch = Random.Range(0.9f, 1.1f);
             _wandController.bubblePop.PlayOneShot(_wandController.bubblePop.clip);
 
-            if (charge < 0.1f) Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Environment"))

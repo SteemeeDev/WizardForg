@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -21,20 +22,30 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] Rigidbody rigidBody;
-    [SerializeField] float moveSpeed = 4f;
+    [SerializeField] GameObject smokeEffect;   
+    public float moveSpeed = 4f;
     public WandManager wandManager;
 
-
+    public Vector3 moveDir;
     private void FixedUpdate()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
-        Vector3 moveDir = new Vector3(inputX, 0, inputY);
+        moveDir = new Vector3(inputX, 0, inputY);
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
         moveDir = Vector3.Normalize(moveDir);
 
         rigidBody.MovePosition(transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(smokeEffect, transform.position, transform.rotation);
+            rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
+        }
     }
 
 }

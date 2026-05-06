@@ -30,15 +30,24 @@ public class ProjectileSlingingEnemy : EnemyScript
                 GameObject proj = Instantiate(projectile);
                 proj.transform.position = transform.position;
                 Rigidbody rb = proj.GetComponent<Rigidbody>();
-                rb.velocity = (playerPosition.position - transform.position).normalized * 10f;
+                rb.velocity = (
+                    (playerPosition.position 
+                    + PlayerController.Instance.moveDir
+                    * PlayerController.Instance.moveSpeed
+                    * Vector3.Distance(playerPosition.position, transform.position) * 0.1f
+                    + new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f, 3f)))
+                    - transform.position).normalized * 10f
+                ;
 
-                Vector3 enemyLook = mainCamera.WorldToScreenPoint(playerPosition.position) - mainCamera.WorldToScreenPoint(transform.position);
+                Vector3 enemyLook =
+                    mainCamera.WorldToScreenPoint(proj.transform.position + rb.velocity)
+                    - mainCamera.WorldToScreenPoint(transform.position);
                 enemyLook = enemyLook.normalized;
 
                 float atan2 = Mathf.Atan2(enemyLook.y, enemyLook.x);
                 proj.transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 90f);
 
-                Agent.SetDestination(transform.position);
+                Agent.SetDestination(transform.position + new Vector3(Random.Range(-3f, -3f), 0, Random.Range(-3f,3f)));
 
                 yield return new WaitForSeconds(1f);
 

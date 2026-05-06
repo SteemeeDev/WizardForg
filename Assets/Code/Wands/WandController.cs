@@ -92,7 +92,7 @@ public class WandController : MonoBehaviour
 
     public IEnumerator IEFadeAudio(float fadeTime, float targetVolume, bool stopAudio)
     {
-        Debug.Log($"FADING AUDIO TO {targetVolume}");
+       // Debug.Log($"FADING AUDIO TO {targetVolume}");
         float elapsed = 0;
         float startingVolume = wandAudioPlayer.volume;
 
