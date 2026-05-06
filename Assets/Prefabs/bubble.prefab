@@ -209,8 +209,7 @@ MonoBehaviour:
   timeAlive: 0
   travelSpeed: 10
   _animator: {fileID: 9003981680305470317}
-  audioPlayer: {fileID: 8436543584474530937}
-  bubblePop: {fileID: 8300000, guid: 2828fa60bb32d954098ef17a6fe1df27, type: 3}
+  bubbleParticles: {fileID: 0}
   chargeUpTime: 2
   charge: 0
 --- !u!135 &8962504204392737656

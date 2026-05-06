@@ -44,7 +44,13 @@ public class BubbleProjectile : Projectile
 
                 charge += Time.deltaTime;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
+
                 chargeUpBar.UpdateBar((charge / chargeUpTime) * chargeUpBar.maxCharge);
+
+                var shape = _wandController.bubbleParticles.shape;
+                shape.radius = (charge / chargeUpTime) * 0.5f;
+                var emission = _wandController.bubbleParticles.emission;
+                emission.rateOverTimeMultiplier = charge / chargeUpTime * 40;
 
                 travelDir = Quaternion.Euler(0,45,0) * -new Vector3(controller.playerLook.x, 0, controller.playerLook.y);
                 travelDir = travelDir.normalized;
@@ -77,6 +83,8 @@ public class BubbleProjectile : Projectile
         _wandController.StopAllCoroutines();
         _wandController.StartCoroutine(_wandController.IEFadeAudio(0.1f, 0f, false));
         _chargeUpBar.UpdateBar(0f);
+        var emission = _wandController.bubbleParticles.emission;
+        emission.rateOverTimeMultiplier = 0;
         // Debug.Log("Fired bubble awnd");
         Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
         foreach (Collider hit in hits)
@@ -129,6 +137,7 @@ public class BubbleProjectile : Projectile
     {
         _wandController.bubblePop.Play();
         yield return new WaitForSeconds(2f);
+        _animator.speed = 0;
         Destroy(gameObject);
     }
 }

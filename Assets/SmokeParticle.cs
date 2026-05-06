@@ -5,6 +5,7 @@ using UnityEngine;
 public class SmokeParticle : MonoBehaviour
 {
     [SerializeField] float lifeTime;
+    public SpriteRenderer spriteRenderer;
     float timeAlive = 0;
 
     private void Update()

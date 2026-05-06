@@ -22,8 +22,11 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] Rigidbody rigidBody;
-    [SerializeField] GameObject smokeEffect;   
+    [SerializeField] GameObject smokeEffect;
+    [SerializeField] SpriteRenderer playerSprite;
     public float moveSpeed = 4f;
+    [SerializeField] float dashCooldown = 1f;
+    float timeSinceLastDash = 0;
     public WandManager wandManager;
 
     public Vector3 moveDir;
@@ -41,9 +44,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        timeSinceLastDash += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space) && timeSinceLastDash > dashCooldown)
         {
-            Instantiate(smokeEffect, transform.position, transform.rotation);
+            timeSinceLastDash = 0;
+            GameObject smoke = Instantiate(smokeEffect, transform.position, transform.rotation);
+            smoke.GetComponent<SmokeParticle>().spriteRenderer.flipX = playerSprite.flipX;
             rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
         }
     }

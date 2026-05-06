@@ -11,7 +11,9 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField] float iFrames = 0.5f;
     [SerializeField] GameObject healthBar;
     [SerializeField] GameObject deathScreen;
-    
+
+    [SerializeField] GameObject damageNumberPrefab;
+
 
     bool canTakeDamage = true;
     public bool playerIsDead = false;
@@ -23,6 +25,11 @@ public class PlayerHealthManager : MonoBehaviour
             health -= damage;
             StartCoroutine(InvincibilityFrames());
             healthBar.GetComponent<PlayerHealthBar>().UpdateHealth();
+            GameObject damageNr = Instantiate(damageNumberPrefab, transform.position, Quaternion.identity);
+            damageNr.transform.position = transform.position;
+            DamageNumber damageNumberManager = damageNr.GetComponent<DamageNumber>();
+            damageNumberManager.damageAmount = damage;
+            damageNumberManager.SpawnObject(transform.position);
         }
 
         if (health <= 0 && !playerIsDead)
