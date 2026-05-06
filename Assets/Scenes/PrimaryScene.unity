@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8223,26 +8223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c4de61e711f714e8da3d5021d89d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnPositions:
-  - {fileID: 1401632385}
-  - {fileID: 1890680327}
-  - {fileID: 1469255805}
-  - {fileID: 1007618173}
-  - {fileID: 514308064}
-  - {fileID: 1389275498}
-  - {fileID: 1324654698}
-  - {fileID: 1668824642}
-  - {fileID: 841994575}
-  - {fileID: 395409129}
-  - {fileID: 2109342565}
-  - {fileID: 196827062}
-  - {fileID: 1651048059}
-  - {fileID: 655993617}
-  - {fileID: 1793299093}
-  - {fileID: 2055370526}
-  meleeEnemy: {fileID: 271354644255123835, guid: 5eacfba7c3a1947408fb6265d6827353,
-    type: 3}
-  rangedEnemy: {fileID: 0}
+  enemyArray1: []
+  enemyArray2: []
+  winScreen: {fileID: 0}
+  playerHealthManager: {fileID: 0}
 --- !u!4 &1025447294
 Transform:
   m_ObjectHideFlags: 0
