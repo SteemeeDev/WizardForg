@@ -8,6 +8,7 @@ public class BubbleProjectile : Projectile
     public float chargeUpTime = 2f;
     public float charge = 0f;
 
+    bool hitEnvironment = false;
     bool fired = false;
 
     // Debounce variable that triggers the onShoot
@@ -19,6 +20,7 @@ public class BubbleProjectile : Projectile
     List<GameObject> hitEnemies = new List<GameObject>();
 
     Vector3 travelDir = Vector3.zero;
+ 
     public IEnumerator FireBubble(WandController controller, Transform startPos, ChargeUpBar chargeUpBar)
     {
         controller.StopAllCoroutines();
@@ -27,6 +29,12 @@ public class BubbleProjectile : Projectile
         _chargeUpBar = chargeUpBar;
         while (timeAlive < lifetime)
         {
+            if (hitEnvironment)
+            {
+                controller.StopAllCoroutines();
+                controller.StartCoroutine(controller.IEFadeAudio(.1f, 0f, false));
+                yield break;
+            }
             timeAlive += Time.deltaTime;
 
             if (Input.GetMouseButton(0) && !fired && charge <= chargeUpTime && controller != null)
@@ -49,8 +57,8 @@ public class BubbleProjectile : Projectile
 
                 var shape = _wandController.bubbleParticles.shape;
                 shape.radius = (charge / chargeUpTime) * 0.5f;
-                var emission = _wandController.bubbleParticles.emission;
-                emission.rateOverTimeMultiplier = charge / chargeUpTime * 40;
+                var bubbleEmission = _wandController.bubbleParticles.emission;
+                bubbleEmission.rateOverTimeMultiplier = Mathf.Pow(charge / chargeUpTime, 2) * 40;
 
                 travelDir = Quaternion.Euler(0,45,0) * -new Vector3(controller.playerLook.x, 0, controller.playerLook.y);
                 travelDir = travelDir.normalized;
@@ -83,8 +91,8 @@ public class BubbleProjectile : Projectile
         _wandController.StopAllCoroutines();
         _wandController.StartCoroutine(_wandController.IEFadeAudio(0.1f, 0f, false));
         _chargeUpBar.UpdateBar(0f);
-        var emission = _wandController.bubbleParticles.emission;
-        emission.rateOverTimeMultiplier = 0;
+        var bubbleEmission = _wandController.bubbleParticles.emission;
+        bubbleEmission.rateOverTimeMultiplier = 0;
         // Debug.Log("Fired bubble awnd");
         Collider[] hits = Physics.OverlapSphere(transform.position, transform.lossyScale.magnitude, 1 << LayerMask.NameToLayer("Enemy"));
         foreach (Collider hit in hits)
@@ -127,6 +135,12 @@ public class BubbleProjectile : Projectile
             _rigidBody.velocity = Vector3.zero;
             _rigidBody.isKinematic = true;
             _animator.SetTrigger("KillBubble");
+
+            hitEnvironment = true;
+            var bubbleEmission = _wandController.bubbleParticles.emission;
+            bubbleEmission.rateOverTimeMultiplier = 0;
+            _wandController.StartCoroutine(_wandController.IEFadeAudio(0.1f, 0f, false));
+
 
             StartCoroutine(IEDestroyObject());
         }

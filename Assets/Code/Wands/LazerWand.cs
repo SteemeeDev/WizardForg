@@ -45,7 +45,7 @@ public class LazerWand : WandController
         if (Input.GetMouseButtonUp(0))
         {
             StopAllCoroutines();
-            StartCoroutine(IEFadeAudio(0.3f, 0f, true));
+            StartCoroutine(IEFadeAudio(0.3f, 0f, false));
             DisableLazer();
         }
 
@@ -62,14 +62,13 @@ public class LazerWand : WandController
             {
                 overCharged = true;
                 wandManager.lazerOvercharge = wandManager.StartCoroutine(wandManager.IEOverchargeLazer(elapsed));
-                StartCoroutine(IEFadeAudio(0.5f, 1f, true));
+                StartCoroutine(IEFadeAudio(0.5f, 0f, false));
                 DisableLazer();
             }
         }
         if (Input.GetMouseButtonDown(0) && !overCharged)
         {
             StopAllCoroutines();
-            wandAudioPlayer.Play();
             StartCoroutine(IEFadeAudio(0.5f, 1f, false));
         }
 

@@ -15,6 +15,8 @@ public class WandManager : MonoBehaviour
 
     public Coroutine lazerOvercharge;
 
+    AudioSource _audioSource;
+
     public enum Wand
     {
         BubbleWand,
@@ -22,6 +24,10 @@ public class WandManager : MonoBehaviour
         StarWand
     }
 
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         SwitchWand();
@@ -51,14 +57,17 @@ public class WandManager : MonoBehaviour
 
     void SwitchWand()
     {
+        _audioSource.Play();
         if (currentWand != null)
         {
             currentWand.gameObject.SetActive(false);
             UIWandAnimators[previousWandIndex].SetBool("Selected", false);
+            UIWandAnimators[previousWandIndex].transform.parent.transform.localScale = Vector3.one;
         }
         currentWand = wands[currentWandIndex];
         currentWand.gameObject.SetActive(true);
         UIWandAnimators[currentWandIndex].SetBool("Selected", true);
+        UIWandAnimators[currentWandIndex].transform.parent.transform.localScale = Vector3.one * 1.2f;
     }
 
     public IEnumerator IEOverchargeLazer(float elapsed)

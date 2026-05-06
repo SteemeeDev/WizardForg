@@ -8,10 +8,12 @@ public class ProjectileSlingingEnemy : EnemyScript
 {
     Camera mainCamera;
     [SerializeField] GameObject projectile;
+    AudioSource _audioSource;
     bool inPosition = false;
 
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
     }
 
@@ -29,6 +31,9 @@ public class ProjectileSlingingEnemy : EnemyScript
             {
                 GameObject proj = Instantiate(projectile);
                 proj.transform.position = transform.position;
+
+                _audioSource.Play();
+
                 Rigidbody rb = proj.GetComponent<Rigidbody>();
                 rb.velocity = (
                     (playerPosition.position 
@@ -49,7 +54,7 @@ public class ProjectileSlingingEnemy : EnemyScript
 
                 Agent.SetDestination(transform.position + new Vector3(Random.Range(-3f, -3f), 0, Random.Range(-3f,3f)));
 
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(Random.Range(0.75f, 1.25f));
 
                 inPosition = false;
                 Agent.SetDestination(playerPosition.position);
@@ -59,7 +64,7 @@ public class ProjectileSlingingEnemy : EnemyScript
                 Agent.SetDestination(playerPosition.position);
             }
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(Random.Range(2f,4f));
         }
     }
 
