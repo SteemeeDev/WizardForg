@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
@@ -11,15 +12,18 @@ public class enemySpawn : MonoBehaviour
 
     private int spawnPos;
 
+    public List<GameObject> enemyList;
+
     public void SpawnEnemies()
     {
         for (int i = 0; i < enemySpawnPositions.Length; i++)
         {
             spawnPos = Random.Range(0, enemySpawnPositions.Length);
             GameObject enemy = Instantiate(meleeEnemy, enemySpawnPositions[spawnPos].position, enemySpawnPositions[spawnPos].rotation);
+            enemyList.Add(enemy);
         }
     }
 
-
+    
 
 }
