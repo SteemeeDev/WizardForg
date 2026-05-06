@@ -11,6 +11,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float AttackRange = 2.5f;
     [SerializeField] Rigidbody rb;
     [SerializeField] Animator animator;
+    
     public SpriteRenderer spriteRenderer;
     int lockPos = 0;
     public Transform playerPosition;
