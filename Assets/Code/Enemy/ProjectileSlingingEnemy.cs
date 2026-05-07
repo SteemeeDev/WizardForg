@@ -40,7 +40,7 @@ public class ProjectileSlingingEnemy : EnemyScript
                     + PlayerController.Instance.moveDir
                     * PlayerController.Instance.moveSpeed
                     * Vector3.Distance(playerPosition.position, transform.position) * 0.1f
-                    + new Vector3(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1.5f, 1.5f)))
+                    + new Vector3(Random.Range(-1.5f, 1.5f), 0, Random.Range(-1.5f, 1.5f)) * PlayerController.Instance.moveDir.magnitude) // Dont use any randomness if player isnt moving
                     - transform.position).normalized * 10f
                 ;
 

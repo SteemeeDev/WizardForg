@@ -24,12 +24,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody rigidBody;
     [SerializeField] GameObject smokeEffect;
     [SerializeField] SpriteRenderer playerSprite;
+    
     public float moveSpeed = 4f;
     [SerializeField] float dashCooldown = 1f;
     float timeSinceLastDash = 0;
     public WandManager wandManager;
 
     public Vector3 moveDir;
+
+    AudioSource dashAudioSource;
+    private void Start()
+    {
+        dashAudioSource = GetComponent<AudioSource>();
+    }
     private void FixedUpdate()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -47,6 +54,7 @@ public class PlayerController : MonoBehaviour
         timeSinceLastDash += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && timeSinceLastDash > dashCooldown)
         {
+            dashAudioSource.Play();
             timeSinceLastDash = 0;
             GameObject smoke = Instantiate(smokeEffect, transform.position, transform.rotation);
             smoke.GetComponent<SmokeParticle>().spriteRenderer.flipX = playerSprite.flipX;

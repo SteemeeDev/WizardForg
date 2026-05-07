@@ -12,6 +12,7 @@ public class LazerWand : WandController
     [SerializeField] Animator animator;
     public float damagePerTick = 5f;
     public int ticksPerSecond = 10;
+    float _ticksPerSecond;
 
     float timeSinceLastTick = 0f;
 
@@ -82,8 +83,10 @@ public class LazerWand : WandController
         if (!overCharged) animator.speed = 1f + (1 - Mathf.Pow(1 - lazerCharge/maxLazerCharge, 3)) * 4f;
         else animator.speed = 1f;
 
+        _ticksPerSecond = 3f + ticksPerSecond * (lazerCharge / maxLazerCharge);
+
         timeSinceLastTick += Time.deltaTime;
-        if (timeSinceLastTick >= 1f / ticksPerSecond)
+        if (timeSinceLastTick >= 1f / _ticksPerSecond)
         {
             timeSinceLastTick = 0f;
             if (targetedEnemy != null)

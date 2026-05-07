@@ -6,6 +6,8 @@ using UnityEngine;
 public class StarProjectile : Projectile
 {
     [SerializeField] float onHitDamage = 80;
+    [SerializeField] AudioSource starFallAudioSource;
+    [SerializeField] AudioSource starBreak;
     Vector3 startingPos;
     Vector3 targetPos;
     LayerMask groundLayer;
@@ -29,6 +31,7 @@ public class StarProjectile : Projectile
 
     public override IEnumerator FireProjectile(WandController controller, Transform startPos)
     {
+        starFallAudioSource.Play();
         RaycastHit hit;
         if(Physics.Raycast(controller.playerCam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, groundLayer)){
             targetPos = hit.point;
@@ -54,7 +57,10 @@ public class StarProjectile : Projectile
         HitGround();
 
         _rigidBody.angularVelocity = Vector3.zero;
-        yield return new WaitForSeconds(0.3f);
+
+        starBreak.Play();
+
+        yield return new WaitForSeconds(0.5f);
 
         Destroy(gameObject);
     }

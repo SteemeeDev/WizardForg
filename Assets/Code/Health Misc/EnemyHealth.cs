@@ -11,6 +11,9 @@ public class EnemyHealth : MonoBehaviour
     float timeSinceLastHit = 999f;
     float damageAnimationTime = 0.15f;
 
+    [SerializeField] AudioSource damageAudioSource;
+    [SerializeField] AudioClip damageSound;
+
     Color originalSpriteColor;
     public void TakeDamage(float damage)
     {
@@ -28,6 +31,8 @@ public class EnemyHealth : MonoBehaviour
         DamageNumber damageNumberManager = damageNr.GetComponent<DamageNumber>();
         damageNumberManager.damageAmount = damage;
         damageNumberManager.SpawnObject(transform.position);
+
+        damageAudioSource.PlayOneShot(damageSound);
     }
 
     private float originalSpeed;
