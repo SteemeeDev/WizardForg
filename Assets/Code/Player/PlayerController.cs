@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     AudioSource dashAudioSource;
     private void Start()
     {
-        dashAudioSource = GetComponent<AudioSource>();
+        dashAudioSource = GetComponent<AudioSource>(); 
     }
     private void FixedUpdate()
     {
