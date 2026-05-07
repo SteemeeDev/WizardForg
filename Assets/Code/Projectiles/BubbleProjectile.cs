@@ -104,9 +104,9 @@ public class BubbleProjectile : Projectile
             if (hit.gameObject.CompareTag("Enemy"))
             {
                // Debug.Log("Hit enemy");
-                hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
+                hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 60f);
 
-                charge -= 0.5f;
+                charge -= 0.3f;
                 transform.localScale = Vector3.one * charge / chargeUpTime;
 
                 travelSpeed *= 0.8f;
@@ -121,9 +121,9 @@ public class BubbleProjectile : Projectile
         {
             if (hitEnemies.Contains(collision.gameObject)) return;
             else hitEnemies.Add(collision.gameObject);
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 50f);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 60f);
 
-            charge -= 0.5f;
+            charge -= 0.3f;
             if (charge <= 0.1f) Destroy(gameObject);
 
             transform.localScale = Vector3.one * charge / chargeUpTime;

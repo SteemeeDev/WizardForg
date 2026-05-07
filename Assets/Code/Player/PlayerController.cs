@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody rigidBody;
     [SerializeField] GameObject smokeEffect;
     [SerializeField] SpriteRenderer playerSprite;
+    [SerializeField] Texture2D cursor;
     
     public float moveSpeed = 4f;
     [SerializeField] float dashCooldown = 1f;
@@ -35,7 +37,8 @@ public class PlayerController : MonoBehaviour
     AudioSource dashAudioSource;
     private void Start()
     {
-        dashAudioSource = GetComponent<AudioSource>(); 
+        dashAudioSource = GetComponent<AudioSource>();
+        Cursor.SetCursor(cursor, new Vector2(14, 14), CursorMode.Auto);
     }
     private void FixedUpdate()
     {
@@ -58,7 +61,30 @@ public class PlayerController : MonoBehaviour
             timeSinceLastDash = 0;
             GameObject smoke = Instantiate(smokeEffect, transform.position, transform.rotation);
             smoke.GetComponent<SmokeParticle>().spriteRenderer.flipX = playerSprite.flipX;
-            rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
+            RaycastHit hit;
+            Physics.SphereCast(
+                transform.position + -moveDir.normalized,
+                1f,
+                moveDir.normalized,
+                out hit, 
+                (moveDir.normalized * moveSpeed * 0.5f).magnitude,
+                1 << LayerMask.NameToLayer("3dEnvironment")
+            );
+
+          
+
+            if (hit.collider != null)
+            {
+                Debug.Log("Hit evironment with dash");
+                Vector3 newPosition = hit.point - (moveDir.normalized * moveSpeed * 0.5f).normalized * 1f;
+                Debug.DrawLine(transform.position + -moveDir.normalized, newPosition, Color.magenta, 5f);
+                rigidBody.MovePosition(new Vector3(newPosition.x, transform.position.y, newPosition.z));
+            }
+            else
+            {
+                Debug.Log("Didnt hit environment");
+                rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StarProjectile : Projectile
@@ -72,7 +73,7 @@ public class StarProjectile : Projectile
         {
             if (hitCollider.gameObject.CompareTag("Enemy"))
             {
-                hitCollider.GetComponent<EnemyHealth>().TakeDamage(onHitDamage);
+                hitCollider.GetComponent<EnemyHealth>().TakeDamage(onHitDamage * Vector3.Distance(transform.position, hitCollider.transform.position) / 4f);
             }
         }
     }

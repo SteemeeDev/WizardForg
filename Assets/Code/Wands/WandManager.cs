@@ -18,6 +18,8 @@ public class WandManager : MonoBehaviour
 
     AudioSource _audioSource;
 
+    public List<Wand> unluckedWands = new();
+
     public enum Wand
     {
         BubbleWand,
@@ -36,19 +38,19 @@ public class WandManager : MonoBehaviour
     private void Update()
     {
         // Yandere dev ahh code :sob:
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && unluckedWands.Contains(Wand.BubbleWand))
         {
             previousWandIndex = currentWandIndex;
             currentWandIndex = (int)Wand.BubbleWand;
             SwitchWand();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && unluckedWands.Contains(Wand.LazerWand))
         {
             previousWandIndex = currentWandIndex;
             currentWandIndex = (int)Wand.LazerWand;
             SwitchWand();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && unluckedWands.Contains(Wand.LazerWand))
         {
             previousWandIndex = currentWandIndex;
             currentWandIndex = (int)Wand.StarWand;
@@ -64,7 +66,7 @@ public class WandManager : MonoBehaviour
 
     void SwitchWand()
     {
-        _audioSource.Play();
+        _audioSource.PlayOneShot(_audioSource.clip);
         if (currentWand != null)
         {
             currentWand.gameObject.SetActive(false);
@@ -77,6 +79,14 @@ public class WandManager : MonoBehaviour
         UIWandAnimators[currentWandIndex].transform.parent.transform.localScale = Vector3.one * 1.2f;
     }
 
+    void UnluckWand(Wand wandType)
+    {
+        if (!unluckedWands.Contains(wandType))
+        {
+            UIWandAnimators[(int)wandType].transform.parent.gameObject.SetActive(true);
+            unluckedWands.Add(wandType);
+        }
+    }
     public IEnumerator IEOverchargeLazer(float elapsed)
     {
         LazerWand lazer = wands[(int)Wand.LazerWand].gameObject.GetComponent<LazerWand>();

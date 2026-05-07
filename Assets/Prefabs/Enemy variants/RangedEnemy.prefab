@@ -286,6 +286,7 @@ MonoBehaviour:
   enemyToPlayer: {x: 0, y: 0, z: 0}
   projectile: {fileID: 6811396048851116315, guid: 367518c9ae5466d4f902f14f5235c11a,
     type: 3}
+  _audioSource: {fileID: 507997616865602105}
 --- !u!82 &507997616865602105
 AudioSource:
   m_ObjectHideFlags: 0
@@ -297,9 +298,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a0f98547cbf3ae740ab07380c24c7db7,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: b2c4bc30ef95dde458778d6039ce0637, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 25c919b7a123de749a71efe28b74122e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

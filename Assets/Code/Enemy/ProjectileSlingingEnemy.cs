@@ -8,12 +8,11 @@ public class ProjectileSlingingEnemy : EnemyScript
 {
     Camera mainCamera;
     [SerializeField] GameObject projectile;
-    AudioSource _audioSource;
+    [SerializeField] AudioSource _audioSource;
     bool inPosition = false;
 
     private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
         mainCamera = Camera.main;
     }
 
@@ -32,11 +31,11 @@ public class ProjectileSlingingEnemy : EnemyScript
                 GameObject proj = Instantiate(projectile);
                 proj.transform.position = transform.position;
 
+                _audioSource.pitch = Random.Range(0.95f, 1.05f);
                 _audioSource.Play();
 
-                Rigidbody rb = proj.GetComponent<Rigidbody>();
-                rb.velocity = (
-                    (playerPosition.position 
+                Vector3 projectileVelocity = (
+                    (playerPosition.position
                     + PlayerController.Instance.moveDir
                     * PlayerController.Instance.moveSpeed
                     * Vector3.Distance(playerPosition.position, transform.position) * 0.1f
@@ -45,12 +44,19 @@ public class ProjectileSlingingEnemy : EnemyScript
                 ;
 
                 Vector3 enemyLook =
-                    mainCamera.WorldToScreenPoint(proj.transform.position + rb.velocity)
+                    mainCamera.WorldToScreenPoint(proj.transform.position + projectileVelocity)
                     - mainCamera.WorldToScreenPoint(transform.position);
+
                 enemyLook = enemyLook.normalized;
 
                 float atan2 = Mathf.Atan2(enemyLook.y, enemyLook.x);
                 proj.transform.rotation = Quaternion.Euler(45, 45, (180f / Mathf.PI) * atan2 + 90f);
+
+                yield return new WaitForSeconds(0.2f);
+
+                Rigidbody rb = proj.GetComponent<Rigidbody>();
+                rb.velocity = (projectileVelocity);
+
 
                 Agent.SetDestination(transform.position + new Vector3(Random.Range(-3f, -3f), 0, Random.Range(-3f,3f)));
 

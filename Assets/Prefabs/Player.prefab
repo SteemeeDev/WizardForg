@@ -5787,7 +5787,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: fb75f4a8e20fd014099076e3c5b6da90, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.43
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6331,7 +6331,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8939411146482800423, guid: a0f98547cbf3ae740ab07380c24c7db7,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 2828fa60bb32d954098ef17a6fe1df27, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11853,7 +11853,7 @@ MonoBehaviour:
   overCharged: 0
   lazerCharge: 0
   maxLazerCharge: 100
-  chargeUpTime: 10
+  chargeUpTime: 20
   chargeDownTime: 30
 --- !u!82 &2236187874015908527
 AudioSource:
