@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WandManager : MonoBehaviour
 {
     // These 2 lists need to be in the same order as the "Wand" enum
-    [SerializeField] WandController[] wands;
+    public WandController[] wands;
     [SerializeField] Animator[] UIWandAnimators;
 
     [SerializeField] int currentWandIndex;
@@ -53,6 +54,12 @@ public class WandManager : MonoBehaviour
             currentWandIndex = (int)Wand.StarWand;
             SwitchWand();
         }
+
+
+        wands[(int)Wand.StarWand].GetComponent<StarWand>().timeSinceLastShot += Time.deltaTime;
+
+        wands[(int)Wand.StarWand].chargeUpBar.maxCharge = wands[(int)Wand.StarWand].GetComponent<StarWand>().cooldown;
+        wands[(int)Wand.StarWand].chargeUpBar.UpdateBar(wands[(int)Wand.StarWand].GetComponent<StarWand>().timeSinceLastShot);
     }
 
     void SwitchWand()

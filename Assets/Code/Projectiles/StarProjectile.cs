@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class StarProjectile : Projectile
 {
+    [SerializeField] float onHitDamage = 80;
     Vector3 startingPos;
     Vector3 targetPos;
     LayerMask groundLayer;
+
+    LayerMask enemyLayer;
     private void Awake()
     {
         groundLayer = 1 << LayerMask.NameToLayer("Ground");
+        enemyLayer = 1 << LayerMask.NameToLayer("Enemy");
     }
 
     private void Update()
@@ -57,6 +61,13 @@ public class StarProjectile : Projectile
 
     void HitGround()
     {
-        
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 4f, enemyLayer);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.CompareTag("Enemy"))
+            {
+                hitCollider.GetComponent<EnemyHealth>().TakeDamage(onHitDamage);
+            }
+        }
     }
 }

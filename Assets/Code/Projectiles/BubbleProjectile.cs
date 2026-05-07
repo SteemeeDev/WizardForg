@@ -37,7 +37,11 @@ public class BubbleProjectile : Projectile
             }
             timeAlive += Time.deltaTime;
 
-            if (Input.GetMouseButton(0) && !fired && charge <= chargeUpTime && controller != null)
+            if (Input.GetMouseButton(0) 
+                && !fired
+                && charge <= chargeUpTime 
+                && controller != null 
+                && controller.gameObject.activeSelf)
             {
                 transform.position = new Vector3(
                     startPos.position.x,

@@ -212,6 +212,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e411efbc09e0ab44a1473e8a3d653e7, type: 3}
+--- !u!114 &387700388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5937032700125862036, guid: d648e7006584e6149ae4b7de30aced4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1613654196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f23764adfffd64fbaa9296e4bd67c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1123,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1533253100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2170664528197459824, guid: d648e7006584e6149ae4b7de30aced4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1613654196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f23764adfffd64fbaa9296e4bd67c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1611732514 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1882492081566819748, guid: 271dd8ad7732d5a4ab411217d35ae198,
@@ -1289,6 +1313,11 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1925128384}
+    - target: {fileID: 1512697899368225177, guid: 271dd8ad7732d5a4ab411217d35ae198,
+        type: 3}
+      propertyPath: _UIWandCooldown
+      value: 
+      objectReference: {fileID: 1533253100}
     - target: {fileID: 1882492081566819748, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: healthBar
@@ -1374,6 +1403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8204264219025502247, guid: 271dd8ad7732d5a4ab411217d35ae198,
+        type: 3}
+      propertyPath: _UIWandCooldown
+      value: 
+      objectReference: {fileID: 387700388}
     - target: {fileID: 9131165709027105124, guid: 271dd8ad7732d5a4ab411217d35ae198,
         type: 3}
       propertyPath: playerCam

@@ -173,3 +173,4 @@ MonoBehaviour:
   lifetime: 200
   timeAlive: 0
   travelSpeed: 0
+  onHitDamage: 100

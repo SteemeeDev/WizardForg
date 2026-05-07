@@ -271,6 +271,9 @@ MonoBehaviour:
   _charge: 0
   maxCharge: 100
   targetScale: 0.5544047
+  _UIWandCooldown: {fileID: 0}
+  wandManager: {fileID: 2891105219993933287}
+  wandType: 2
 --- !u!1 &2595515850980241185
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +335,8 @@ MonoBehaviour:
   playerLook: {x: 0, y: 0, z: 0}
   chargeUpBar: {fileID: 8204264219025502247}
   firePos2: {fileID: 776065024096393666}
+  cooldown: 10
+  timeSinceLastShot: 0
 --- !u!1 &3181215056346940166
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +577,9 @@ MonoBehaviour:
   _charge: 0
   maxCharge: 100
   targetScale: 0.5544047
+  _UIWandCooldown: {fileID: 0}
+  wandManager: {fileID: 2891105219993933287}
+  wandType: 1
 --- !u!1 &3739897349351362556
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,7 +5952,7 @@ MonoBehaviour:
   maxHealth: 5
   wandController: {fileID: 2892760929318302953}
   playerAnimator: {fileID: 3529760224825020680}
-  iFrames: 0.5
+  iFrames: 2
   healthBar: {fileID: 0}
   deathScreen: {fileID: 0}
   damageNumberPrefab: {fileID: 6442975612575523806, guid: ec742589e00440240b896581ecbdf6e0,
@@ -11270,6 +11278,9 @@ MonoBehaviour:
   _charge: 0
   maxCharge: 100
   targetScale: 0.5544047
+  _UIWandCooldown: {fileID: 0}
+  wandManager: {fileID: 2891105219993933287}
+  wandType: 0
 --- !u!1001 &1400459569850412945
 PrefabInstance:
   m_ObjectHideFlags: 0
