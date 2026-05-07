@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
 {
-
-
     [SerializeField] Transform[] enemySpawnPositions;
     public GameObject meleeEnemy;
     public GameObject rangedEnemy;
@@ -20,6 +18,7 @@ public class enemySpawn : MonoBehaviour
         {
             spawnPos = Random.Range(0, enemySpawnPositions.Length);
             GameObject enemy = Instantiate(meleeEnemy, enemySpawnPositions[spawnPos].position, enemySpawnPositions[spawnPos].rotation);
+            enemy.GetComponent<EnemyHealth>()._enemySpawn = this;
             enemyList.Add(enemy);
         }
     }

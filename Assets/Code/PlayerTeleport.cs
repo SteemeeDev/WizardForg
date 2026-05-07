@@ -3,16 +3,23 @@ using UnityEngine;
 
 public class PlayerTeleport : MonoBehaviour
 {
-    [SerializeField] Transform playerTeleportTarget;
+    [SerializeField] Transform TPTarget;
+    
+
     [SerializeField] enemySpawn enemySpawner;
 
+   
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            other.transform.position = playerTeleportTarget.position;
+            other.transform.position = TPTarget.position;
             enemySpawner.SpawnEnemies();
+            gameObject.SetActive(false); 
+            
         }
-    }
+        
+
+    }   
 }

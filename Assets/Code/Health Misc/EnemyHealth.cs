@@ -1,11 +1,12 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] EnemyScript enemyScript;
     [SerializeField] GameObject damageNumberPrefab;
-    [SerializeField] enemySpawn enemySpawn;
+    public enemySpawn _enemySpawn;
     public float health = 100f;
 
     float timeSinceLastHit = 999f;
@@ -15,14 +16,15 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] AudioClip damageSound;
 
     Color originalSpriteColor;
+    
     public void TakeDamage(float damage)
     {
         timeSinceLastHit = 0;
         health -= damage;
         if (health <= 0f)
         {
-            enemySpawn.enemyList.Remove(gameObject);
-            Debug.Log(enemySpawn.enemyList.Count);
+            if(_enemySpawn != null) _enemySpawn.enemyList.Remove(gameObject);
+            Debug.Log(_enemySpawn.enemyList.Count);
             Destroy(gameObject);
         }
 
