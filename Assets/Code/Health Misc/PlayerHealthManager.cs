@@ -6,11 +6,11 @@ public class PlayerHealthManager : MonoBehaviour
 {
     public int health = 10;
     public int maxHealth = 10;
-    [SerializeField] WandController wandController;
     [SerializeField] Animator playerAnimator;
     [SerializeField] float iFrames = 0.5f;
     [SerializeField] GameObject healthBar;
     [SerializeField] GameObject deathScreen;
+    [SerializeField] SpriteRenderer playerRenderer;
 
     [SerializeField] GameObject damageNumberPrefab;
 
@@ -39,6 +39,10 @@ public class PlayerHealthManager : MonoBehaviour
 
         if (health <= 0 && !playerIsDead)
         {
+            StopAllCoroutines();
+
+            playerRenderer.color = Color.white;
+
             playerIsDead = true;
 
             GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
@@ -55,8 +59,9 @@ public class PlayerHealthManager : MonoBehaviour
             PlayerController plrController = GetComponent<PlayerController>();
             plrController.enabled = false;
             plrController.wandManager.currentWand.gameObject.SetActive(false);
+            plrController.wandManager.gameObject.SetActive(false);
 
-            
+
 
             playerAnimator.SetTrigger("Die");
         }
@@ -81,7 +86,27 @@ public class PlayerHealthManager : MonoBehaviour
     IEnumerator InvincibilityFrames()
     {
         canTakeDamage = false;
-        yield return new WaitForSeconds(iFrames);
+        // Fuck this shit im hardcoding the animation
+        int greyScalePulses = 3;
+
+        if (!playerIsDead)
+        {
+            for (int i = 0; i < greyScalePulses; i++)
+            {
+                yield return new WaitForSeconds(iFrames / greyScalePulses * 0.3f);
+                playerRenderer.color = Color.white * 0.8f;
+                yield return new WaitForSeconds(iFrames / greyScalePulses * 0.7f);
+                playerRenderer.color = Color.white;
+            }
+        }
+        else
+        {
+            playerRenderer.color = Color.white;
+        }
+
+
+
+
         canTakeDamage = true;
     }
     
