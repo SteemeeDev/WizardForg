@@ -103,7 +103,9 @@ public class BubbleProjectile : Projectile
         {
             if (hit.gameObject.CompareTag("Enemy"))
             {
-               // Debug.Log("Hit enemy");
+                if (hitEnemies.Contains(hit.gameObject)) return;
+                else hitEnemies.Add(hit.gameObject);
+                // Debug.Log("Hit enemy");
                 hit.gameObject.GetComponent<EnemyHealth>().TakeDamage(Mathf.Pow(charge / chargeUpTime, 2f) * 60f);
 
                 charge -= 0.3f;

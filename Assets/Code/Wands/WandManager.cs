@@ -79,7 +79,7 @@ public class WandManager : MonoBehaviour
         UIWandAnimators[currentWandIndex].transform.parent.transform.localScale = Vector3.one * 1.2f;
     }
 
-    void UnluckWand(Wand wandType)
+    public void UnluckWand(Wand wandType)
     {
         if (!unluckedWands.Contains(wandType))
         {

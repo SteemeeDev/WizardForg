@@ -260,8 +260,8 @@ MonoBehaviour:
   enemyScript: {fileID: 6522709833824777102}
   damageNumberPrefab: {fileID: 6442975612575523806, guid: 4c061715683e4a44b881644eaf9d2c55,
     type: 3}
-  enemySpawn: {fileID: 0}
-  health: 1000000
+  _enemySpawn: {fileID: 0}
+  health: 70
   damageAudioSource: {fileID: 5868295218477839934}
   damageSound: {fileID: 8300000, guid: e66c1437edabaa9478ffa05d2816b8ba, type: 3}
 --- !u!114 &6522709833824777102

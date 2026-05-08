@@ -1,28 +1,34 @@
-
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
 {
     [SerializeField] Transform[] enemySpawnPositions;
-    public GameObject meleeEnemy;
-    public GameObject rangedEnemy;
+    [SerializeField] Wave wave;
 
     private int spawnPos;
 
     public List<GameObject> enemyList;
 
-    public void SpawnEnemies()
+    public IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < enemySpawnPositions.Length; i++)
+        for (int i = 0; i < wave.enemies.Length; i++)
         {
             spawnPos = Random.Range(0, enemySpawnPositions.Length);
-            GameObject enemy = Instantiate(meleeEnemy, enemySpawnPositions[spawnPos].position, enemySpawnPositions[spawnPos].rotation);
-            enemy.GetComponent<EnemyHealth>()._enemySpawn = this;
-            enemyList.Add(enemy);
+            if (enemySpawnPositions != null)
+            {
+                yield return new WaitForSeconds(3f);
+                GameObject enemy = Instantiate(wave.enemies[i], enemySpawnPositions[spawnPos].position, enemySpawnPositions[spawnPos].rotation);
+                enemy.GetComponent<EnemyHealth>()._enemySpawn = this;
+                enemyList.Add(enemy);
+            }
         }
     }
 
-    
 
+    private void Update()
+    {
+        
+    }
 }

@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         moveDir = Quaternion.Euler(0, 45, 0) * moveDir;
         moveDir = Vector3.Normalize(moveDir);
 
+
+        rigidBody.velocity = Vector3.zero;
         rigidBody.MovePosition(transform.position + moveDir * Time.fixedDeltaTime * moveSpeed);
     }
 
@@ -76,14 +78,16 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log("Hit evironment with dash");
-                Vector3 newPosition = hit.point - (moveDir.normalized * moveSpeed * 0.5f).normalized * 1f;
+                Vector3 newPosition = hit.point - (moveDir.normalized * moveSpeed * 0.5f).normalized * .1f;
                 Debug.DrawLine(transform.position + -moveDir.normalized, newPosition, Color.magenta, 5f);
                 rigidBody.MovePosition(new Vector3(newPosition.x, transform.position.y, newPosition.z));
+                rigidBody.velocity = Vector3.zero;
             }
             else
             {
                 Debug.Log("Didnt hit environment");
                 rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
+                rigidBody.velocity = Vector3.zero;
             }
         }
     }
