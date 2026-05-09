@@ -6,14 +6,14 @@ public class PlayerTeleport : MonoBehaviour
     [SerializeField] Transform TPTarget;
     [SerializeField] enemySpawn enemySpawner;
 
-    bool hasTped;
+    public bool hasTped;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && !hasTped)
         {
             hasTped = true;
-            other.transform.position = TPTarget.position;
+            if (TPTarget != null) other.transform.position = TPTarget.position;
             enemySpawner.StartCoroutine(enemySpawner.SpawnEnemies());
             gameObject.SetActive(false); 
         }

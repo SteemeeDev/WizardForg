@@ -57,11 +57,11 @@ public class WandManager : MonoBehaviour
             SwitchWand();
         }
 
+        StarWand starWand = wands[(int)Wand.StarWand].GetComponent<StarWand>();
+        if (starWand.timeSinceLastShot < starWand.cooldown) starWand.timeSinceLastShot += Time.deltaTime;
 
-        wands[(int)Wand.StarWand].GetComponent<StarWand>().timeSinceLastShot += Time.deltaTime;
-
-        wands[(int)Wand.StarWand].chargeUpBar.maxCharge = wands[(int)Wand.StarWand].GetComponent<StarWand>().cooldown;
-        wands[(int)Wand.StarWand].chargeUpBar.UpdateBar(wands[(int)Wand.StarWand].GetComponent<StarWand>().timeSinceLastShot);
+        starWand.chargeUpBar.maxCharge = starWand.cooldown;
+        starWand.chargeUpBar.UpdateBar(starWand.timeSinceLastShot);
     }
 
     void SwitchWand()

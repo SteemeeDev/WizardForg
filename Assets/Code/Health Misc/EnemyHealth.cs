@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0f)
         {
             if(_enemySpawn != null) _enemySpawn.enemyList.Remove(gameObject);
-            Debug.Log(_enemySpawn.enemyList.Count);
+          //  Debug.Log(_enemySpawn.enemyList.Count);
             Destroy(gameObject);
         }
 
