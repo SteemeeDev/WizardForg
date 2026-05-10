@@ -58,7 +58,7 @@ public class WandManager : MonoBehaviour
         }
 
         StarWand starWand = wands[(int)Wand.StarWand].GetComponent<StarWand>();
-        if (starWand.timeSinceLastShot < starWand.cooldown) starWand.timeSinceLastShot += Time.deltaTime;
+        if (starWand.timeSinceLastShot <= starWand.cooldown) starWand.timeSinceLastShot += Time.deltaTime;
 
         starWand.chargeUpBar.maxCharge = starWand.cooldown;
         starWand.chargeUpBar.UpdateBar(starWand.timeSinceLastShot);

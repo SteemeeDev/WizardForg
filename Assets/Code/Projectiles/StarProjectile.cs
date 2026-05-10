@@ -55,11 +55,10 @@ public class StarProjectile : Projectile
         }
 
         CameraShake.Instance.StartCoroutine(CameraShake.Instance.IEShakeCamera(0.3f, 0.3f));
-        HitGround();
-
         _rigidBody.angularVelocity = Vector3.zero;
-
         starBreak.Play();
+
+        HitGround();
 
         yield return new WaitForSeconds(0.5f);
 

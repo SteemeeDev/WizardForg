@@ -14,8 +14,6 @@ public class WandController : MonoBehaviour
 
     public float atan2;
 
-    public float rot = 0;
-
     public Camera playerCam;
 
     public Vector3 wandToPlayer;
@@ -44,10 +42,18 @@ public class WandController : MonoBehaviour
         Vector3 playerScreenPos = playerCam.WorldToScreenPoint(playerTransform.position);
         Vector3 mousePos = Input.mousePosition;
 
+        // Vector from player to mouse pos
         playerLook = playerScreenPos - mousePos;
         playerLook = playerLook.normalized;
 
-        transform.position = playerTransform.position - Quaternion.Euler(0, 45, 0) * new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
+        transform.position = 
+            playerTransform.position 
+            - Quaternion.Euler(0, 45, 0) // We rotate 45 degrees so that the wand points towards the camera
+            * new Vector3(playerLook.x, 0, playerLook.y) 
+            * distFromPlayer
+       ;
+
+        // Used by other scripts such as projectiles
         wandToPlayer = new Vector3(playerLook.x, 0, playerLook.y) * distFromPlayer;
 
         atan2 = Mathf.Atan2(playerLook.y, playerLook.x);
