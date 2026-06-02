@@ -17,8 +17,10 @@ public class BubbleProjectile : Projectile
     ChargeUpBar _chargeUpBar;
     BubbleWand _wandController;
 
+    // We keep track of enemies hit to stop the same enemy getting hit twice
     List<GameObject> hitEnemies = new List<GameObject>();
 
+    // Travel direction of the bubble
     Vector3 travelDir = Vector3.zero;
  
     public IEnumerator FireBubble(WandController controller, Transform startPos, ChargeUpBar chargeUpBar)
@@ -37,6 +39,7 @@ public class BubbleProjectile : Projectile
             }
             timeAlive += Time.deltaTime;
 
+            // Charging up the bubble
             if (Input.GetMouseButton(0) 
                 && !fired
                 && charge <= chargeUpTime 
@@ -59,8 +62,9 @@ public class BubbleProjectile : Projectile
 
                 chargeUpBar.UpdateBar((charge / chargeUpTime) * chargeUpBar.maxCharge);
 
-                var shape = _wandController.bubbleParticles.shape;
-                shape.radius = (charge / chargeUpTime) * 0.5f;
+                // Particle handling
+                var bubbleParticleShape = _wandController.bubbleParticles.shape;
+                bubbleParticleShape.radius = (charge / chargeUpTime) * 0.5f;
                 var bubbleEmission = _wandController.bubbleParticles.emission;
                 bubbleEmission.rateOverTimeMultiplier = Mathf.Pow(charge / chargeUpTime, 2) * 40;
 
@@ -69,15 +73,16 @@ public class BubbleProjectile : Projectile
 
                 Debug.DrawRay(transform.position, travelDir, Color.magenta);
             }
+            //Onfire
             else if (fired && !onFired)
             {
-                onFired = true;
+                onFired = true; 
+                _rigidBody.velocity = new Vector3(travelDir.x, transform.position.y, travelDir.z) * travelSpeed;
                 OnFireWand();
             }
             else
             {
                 fired = true;
-                _rigidBody.velocity = new Vector3(travelDir.x, transform.position.y, travelDir.z) * travelSpeed;
                 Debug.DrawRay(transform.position, travelDir, Color.yellow);
             }
 
@@ -152,7 +157,7 @@ public class BubbleProjectile : Projectile
         }
     }
 
-    // Called by animationevent on _animator
+
     public IEnumerator IEDestroyObject()
     {
         _wandController.bubblePop.Play();

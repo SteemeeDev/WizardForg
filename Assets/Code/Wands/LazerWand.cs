@@ -43,6 +43,42 @@ public class LazerWand : WandController
     public override void Update()
     {
         base.Update();
+
+        if (!overCharged)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                StopAllCoroutines();
+                StartCoroutine(IEFadeAudio(0.5f, 1f, false));
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                firingLazer = true;
+                lazerCharge += Time.deltaTime * chargeUpTime;
+                lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
+                if (lazerCharge < maxLazerCharge)
+                {
+                    FireWand();
+                }
+                // If the lazer charge exceeds the maximum, overcharge the lazer
+                else
+                {
+                    overCharged = true;
+                    wandManager.lazerOvercharge = wandManager.StartCoroutine(wandManager.IEOverchargeLazer());
+                    StartCoroutine(IEFadeAudio(0.5f, 0f, false));
+                    DisableLazer();
+                }
+            }
+
+            // TODO: Make wandManager take care of this so the lazer can cool down while not in use
+            if (!firingLazer)
+            {
+                lazerCharge -= Time.deltaTime * chargeDownTime;
+                lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
+            }
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
             StopAllCoroutines();
@@ -50,39 +86,14 @@ public class LazerWand : WandController
             DisableLazer();
         }
 
-        if (Input.GetMouseButton(0) && !overCharged)
-        {
-            firingLazer = true;
-            lazerCharge += Time.deltaTime * chargeUpTime;
-            lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
-            if (lazerCharge < maxLazerCharge)
-            {
-                FireWand();
-            }
-            else
-            {
-                overCharged = true;
-                wandManager.lazerOvercharge = wandManager.StartCoroutine(wandManager.IEOverchargeLazer(elapsed));
-                StartCoroutine(IEFadeAudio(0.5f, 0f, false));
-                DisableLazer();
-            }
-        }
-        if (Input.GetMouseButtonDown(0) && !overCharged)
-        {
-            StopAllCoroutines();
-            StartCoroutine(IEFadeAudio(0.5f, 1f, false));
-        }
-
-        if (!firingLazer && !overCharged)
-        {
-            lazerCharge -= Time.deltaTime * chargeDownTime;
-            lazerCharge = Mathf.Clamp(lazerCharge, 0, maxLazerCharge);
-        }
-
         chargeUpBar.UpdateBar(lazerCharge);
+
+        // Speed up the lazer ball animation by how charged the lazer is
         if (!overCharged) animator.speed = 1f + (1 - Mathf.Pow(1 - lazerCharge/maxLazerCharge, 3)) * 4f;
         else animator.speed = 1f;
 
+
+        // Damage Tick system
         _ticksPerSecond = 3f + ticksPerSecond * (lazerCharge / maxLazerCharge);
 
         timeSinceLastTick += Time.deltaTime;

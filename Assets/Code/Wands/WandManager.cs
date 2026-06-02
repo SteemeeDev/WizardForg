@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class WandManager : MonoBehaviour
 {
-    // These 2 lists need to be in the same order as the "Wand" enum
+    // These 2 arrays need to be in the same order as the "Wand" enum
     public WandController[] wands;
     [SerializeField] Animator[] UIWandAnimators;
 
@@ -50,7 +50,7 @@ public class WandManager : MonoBehaviour
             currentWandIndex = (int)Wand.LazerWand;
             SwitchWand();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && unluckedWands.Contains(Wand.LazerWand))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && unluckedWands.Contains(Wand.StarWand))
         {
             previousWandIndex = currentWandIndex;
             currentWandIndex = (int)Wand.StarWand;
@@ -87,12 +87,12 @@ public class WandManager : MonoBehaviour
             unluckedWands.Add(wandType);
         }
     }
-    public IEnumerator IEOverchargeLazer(float elapsed)
+    public IEnumerator IEOverchargeLazer()
     {
         LazerWand lazer = wands[(int)Wand.LazerWand].gameObject.GetComponent<LazerWand>();
         lazer.overCharged = true;
 
-        if (elapsed <= 0) elapsed = lazer.maxLazerCharge;
+        float elapsed = lazer.maxLazerCharge;
 
         while (elapsed > 0)
         {

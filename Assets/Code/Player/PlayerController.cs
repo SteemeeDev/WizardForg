@@ -60,9 +60,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && timeSinceLastDash > dashCooldown)
         {
             dashAudioSource.Play();
+
             timeSinceLastDash = 0;
+
             GameObject smoke = Instantiate(smokeEffect, transform.position, transform.rotation);
             smoke.GetComponent<SmokeParticle>().spriteRenderer.flipX = playerSprite.flipX;
+
+            // Spherecast to check for obstacles, so we cant dash trough them
             RaycastHit hit;
             Physics.SphereCast(
                 transform.position + -moveDir.normalized,
@@ -72,20 +76,19 @@ public class PlayerController : MonoBehaviour
                 (moveDir.normalized * moveSpeed * 0.5f).magnitude,
                 1 << LayerMask.NameToLayer("3dEnvironment")
             );
-
           
 
+            // If we hit environment, shorten the dash length
             if (hit.collider != null)
             {
-                Debug.Log("Hit evironment with dash");
                 Vector3 newPosition = hit.point - (moveDir.normalized * moveSpeed * 0.5f).normalized * .1f;
                 Debug.DrawLine(transform.position + -moveDir.normalized, newPosition, Color.magenta, 5f);
                 rigidBody.MovePosition(new Vector3(newPosition.x, transform.position.y, newPosition.z));
                 rigidBody.velocity = Vector3.zero;
             }
+            // Dash normally if we hit nothing
             else
             {
-                Debug.Log("Didnt hit environment");
                 rigidBody.MovePosition(transform.position + moveDir.normalized * moveSpeed * 0.5f);
                 rigidBody.velocity = Vector3.zero;
             }

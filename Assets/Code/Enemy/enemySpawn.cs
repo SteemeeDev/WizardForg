@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
@@ -8,6 +9,7 @@ public class enemySpawn : MonoBehaviour
     [SerializeField] Wave[] waves;
 
     public bool spawnedAllEnemies;
+    public bool _allEnemiesSpawned;
 
     private int spawnPos;
 
@@ -34,11 +36,16 @@ public class enemySpawn : MonoBehaviour
         }
 
         spawnedAllEnemies = true;
+        _allEnemiesSpawned = true;
     }
 
 
     private void Update()
     {
-        if (spawnedAllEnemies == true && enemyList.Count == 0 && loopForever) StartCoroutine(SpawnEnemies());
+        if (_allEnemiesSpawned && enemyList.Count == 0 && loopForever)
+        {
+            _allEnemiesSpawned = false;
+            StartCoroutine(SpawnEnemies());
+        }
     }
 }

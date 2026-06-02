@@ -72,7 +72,7 @@ public class StarProjectile : Projectile
         {
             if (hitCollider.gameObject.CompareTag("Enemy"))
             {
-                hitCollider.GetComponent<EnemyHealth>().TakeDamage(onHitDamage * Vector3.Distance(transform.position, hitCollider.transform.position) / 4f);
+                hitCollider.GetComponent<EnemyHealth>().TakeDamage(onHitDamage * (0.5f + Vector3.Distance(transform.position, hitCollider.transform.position) / 4f));
             }
         }
     }
